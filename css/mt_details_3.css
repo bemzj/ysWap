@@ -1,0 +1,117 @@
+body {
+  background-color: #f7f7f7; }
+
+.threeBtn {
+  width: 100%;
+  background-color: white; }
+  .threeBtn > div {
+    width: 82%;
+    margin: 0 auto; }
+  .threeBtn ul {
+    font-size: 0.3rem;
+    width: 100%; }
+    .threeBtn ul li {
+      display: inline-block;
+      font-size: 0.3rem;
+      line-height: 0.8rem;
+      width: 30%; }
+      .threeBtn ul li span {
+        color: #333333;
+        text-align: center; }
+      .threeBtn ul li .choiceSpan {
+        color: #dda430; }
+
+#main {
+  width: 100%;
+  padding-top: 1.0rem; }
+
+.field {
+  margin-top: 0.3rem;
+  padding-bottom: 0.9rem; }
+  .field .fieldImg {
+    width: 100%; }
+    .field .fieldImg img {
+      width: 100%; }
+  .field .fieldBox {
+    background-color: white;
+    border-radius: 0.08rem;
+    overflow: hidden; }
+  .field .fieldContent {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.55rem 0.45rem 0.45rem;
+    color: #333333;
+    font-size: 0.3rem;
+    line-height: 0.5rem; }
+    .field .fieldContent ul li p {
+      margin: 0.15rem 0; }
+    .field .fieldContent ul li span {
+      font-weight: bold; }
+    .field .fieldContent ul li a {
+      display: inline-block;
+      color: #45acda;
+      position: relative; }
+    .field .fieldContent ul li a::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border: 0.5px solid #45acda; }
+    .field .fieldContent ul li:nth-child(1) {
+      font-size: 0.36rem; }
+  .field .twoBtn a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 0.84rem;
+    text-align: center;
+    color: #333333;
+    font-size: 0.3rem;
+    margin-top: 0.4rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.05rem;
+    background: url("../img/mt_address.png") no-repeat 40% center;
+    background-size: 0.22rem auto;
+    background-color: white;
+    text-indent: 0.3rem; }
+  .field .twoBtn .shopBtn {
+    background: url("../img/mt_shop.png") no-repeat 40% center;
+    background-size: 0.35rem auto;
+    background-color: #dda430;
+    border-color: #dda430;
+    color: #ffffff; }
+
+.plan {
+  background-color: white;
+  margin-top: 0.3rem;
+  padding-bottom: 0.8rem; }
+  .plan .time {
+    color: #333333;
+    font-size: 0.32rem;
+    line-height: 1.0rem;
+    font-weight: bold; }
+  .plan .planTitle {
+    width: 100%;
+    line-height: 0.7rem;
+    font-size: 0.28rem;
+    color: white; }
+  .plan .pTime {
+    font-size: 0.36rem;
+    color: #dda430;
+    line-height: 0.8rem;
+    border-bottom: 1px solid #eeeeee; }
+  .plan .pTitle {
+    font-size: 0.32rem;
+    color: #333333;
+    font-family: 'SimHei';
+    line-height: 0.46rem; }
+  .plan .pContent {
+    font-size: 0.24rem;
+    color: #666666;
+    padding: 0.07rem 0; }
+  .plan .ctt {
+    padding: 0.2rem 0;
+    line-height: 0.32rem; }
+
+/*# sourceMappingURL=mt_details_3.css.map */

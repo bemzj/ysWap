@@ -1,0 +1,149 @@
+$black:#333333;
+body{
+  background-color: #f7f7f7;
+}
+.threeBtn{
+  width: 100%;
+  background-color: white;
+  >div{
+    width: 82%;
+    margin: 0 auto;
+  }
+  ul{
+    font-size:0.3rem;
+    width: 100%;
+    li{
+      display: inline-block;
+      font-size: 0.3rem;
+      line-height:0.8rem;
+      width:30%;
+      span{
+        color:$black;
+        text-align:center;
+      }
+      .choiceSpan{
+        color: #dda430;
+      }
+    }
+  }
+}
+#main{
+  width:100%;
+  padding-top:1.0rem;
+}
+.field{
+  margin-top: 0.3rem;
+  padding-bottom: 0.9rem;
+  .fieldImg{
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+  .fieldBox{
+    background-color: white;
+    border-radius: 0.08rem;
+    overflow: hidden;
+  }
+  .fieldContent{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.55rem 0.45rem 0.45rem;
+    color: $black;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+
+    ul li{
+
+        p{
+          margin: 0.15rem 0;
+        }
+        span{
+          font-weight: bold;
+        }
+        a{
+          display: inline-block;
+          color: #45acda;
+          position: relative;
+        }
+        a::before{
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          border: 0.5px solid #45acda;
+        }
+    }
+    ul li:nth-child(1){
+      font-size: 0.36rem;
+    }
+  }
+  .twoBtn{
+    a{
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      line-height: 0.84rem;
+      text-align: center;
+
+      color: $black;
+      font-size: 0.3rem;
+      margin-top: 0.4rem;
+      border: 1px solid #e5e5e5;
+      border-radius: 0.05rem;
+      background: url("../img/mt_address.png") no-repeat 40% center;
+      background-size: 0.22rem auto;
+      background-color: white;
+      text-indent: 0.3rem;
+    }
+    .shopBtn{
+      background: url("../img/mt_shop.png") no-repeat 40% center;
+      background-size: 0.35rem auto;
+      background-color: #dda430;
+      border-color: #dda430;
+      color: #ffffff;
+    }
+  }
+}
+.plan{
+  background-color: white;
+  margin-top: 0.3rem;
+  padding-bottom: 0.8rem;
+  .time{
+    color: $black;
+    font-size: 0.32rem;
+    line-height: 1.0rem;
+    font-weight: bold;
+  }
+  .planTitle{
+    width: 100%;
+    line-height: 0.7rem;
+    font-size: 0.28rem;
+    color: white;
+    //background-color: #90c8c3;
+
+  }
+  .pTime{
+    font-size: 0.36rem;
+    color: #dda430;
+    line-height: 0.8rem;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .pTitle{
+    font-size: 0.32rem;
+    color: $black;
+    //font-weight: bold;
+    font-family: 'SimHei';
+    line-height: 0.46rem;
+  }
+  .pContent{
+    font-size: 0.24rem;
+    color: #666666;
+    padding: 0.07rem 0;
+  }
+  .ctt{
+    padding:0.2rem 0 ;
+    line-height: 0.32rem;
+  }
+}
