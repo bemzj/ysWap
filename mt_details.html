@@ -8,6 +8,7 @@
 		<meta content="yes" name="apple-mobile-web-app-capable"/>
 		<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 		<meta content="telephone=no" name="format-detection"/>
+		<link rel="stylesheet" href="lib/css/layui.mobile.css" />
 		<link rel="stylesheet" href="css/reset.min.css" />
 		<link rel="stylesheet" href="css/public.css"/>
 		<link rel="stylesheet" href="css/mt_details_3.css">
@@ -32,22 +33,49 @@
 		</script>
 		<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script src="lib/layui.js"></script>
 	</head>
 	<body>
 		<!--删除不良信息-->
 		<div class="delete1" hidden="hidden"></div>
-		<!--导航-->
-		<div class="secondNav">
-			<a class="returnNav"><img src="img/navLeft.png" /></a>
-			<p>SbSTC.我的会议</p>
-			<a href="###" class="signIn">签到</a>
-		</div>
+
 		<div id="main" >
+			<!--导航-->
+			<div class="secondNav">
+				<a class="returnNav"><img src="img/navLeft.png" /></a>
+				<p>SbSTC.会议详情</p>
+				<a href="###" v-if="registerStatus==0" class="signIn"  @click="showPop">
+					签到
+				</a>
+				<a href="###" v-else class="signIn signInHas"  @click="showPop">
+					已签到
+				</a>
+			</div>
 			<div class="threeBtn" >
 				<div align="center">
 					<ul >
 						<li v-for="(item,index) in nav">
 							<span @click="meetIndex=index" :class="{choiceSpan:meetIndex==index}">{{item}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="message" v-if="meetIndex==0">
+				<div class="msgBanner">
+					<img src="img/mt_message.png" />
+					<div class="msgBox">
+						<p v-for = 'item in msg.bannerP'>{{item}}</p>
+						<span>{{msg.companyName}}{{msg.companyAddress}} {{msg.companyTime}}</span>
+					</div>
+
+				</div>
+				<div class="personMsg">
+					<div class="msgTitle">
+						<p>{{msg.msgTitle}}</p>
+					</div>
+					<ul>
+						<li v-for="(item,index) in msg.msgContent">
+							<p>{{msg.msgTip[index]}}：<span>{{item}}</span></p>
 						</li>
 					</ul>
 				</div>
@@ -105,189 +133,260 @@
 			</div>
 
 		</div>
+		<div id="popRegister" style="display: none">
+			<div class="popRegister">
+				<img src="img/mt_register.png" />
+				<button></button>
+				<a href="mt_erCode.html"></a>
+			</div>
+		</div>
 		<script>
 			var  main = new Vue({
                 el:'#main',
-                data:{
-                    nav:["报名信息","会议议程","会议场地"],
-					meetIndex:1,
-					fieldMsg:{
-						"name":"深圳圣淘沙酒店翡翠店",
-						"address":"深圳市南山区金鸡路1号翡翠明珠花园",
-						"phone":"0755-26390888",
-						"position":"位于市深圳南山区地铁1号线（罗宝线）桃园地铁B出口直行100米右转从田厦新邨牌坊直行200米到达"
-					},
-					all:[
-						{
-							'lev':1,
-							'time':'08:00-15:00',
-							'sort':'',
-                            'title':'',
-							'content':'听众登记',
-							'bgColor':'#90c8c3'
-						},
+                data: {
+                    nav: ["报名信息", "会议议程", "会议场地"],
+                    meetIndex: 0,
+                    fieldMsg: {
+                        "name": "深圳圣淘沙酒店翡翠店",
+                        "address": "深圳市南山区金鸡路1号翡翠明珠花园",
+                        "phone": "0755-26390888",
+                        "position": "位于市深圳南山区地铁1号线（罗宝线）桃园地铁B出口直行100米右转从田厦新邨牌坊直行200米到达"
+                    },
+                    all: [
                         {
-                            'lev':2,
-                            'time':'09:00-09:10',
-                            'sort':'A01',
-                            'title':'欢迎词',
-                            'content':'麦协林 -《SMT China表面组装技术》杂志社出版总监SMT',
-                            'bgColor':'#ffffff'
+                            'lev': 1,
+                            'time': '08:00-15:00',
+                            'sort': '',
+                            'title': '',
+                            'content': '听众登记',
+                            'bgColor': '#90c8c3'
                         },
                         {
-                            'lev':2,
-                            'time':'09:10-09:30',
-                            'sort':'A02',
-                            'title':'激光条码雕刻系统在SMT智慧生产的应用',
-                            'content':'彭其鸿 - 新迪精密科技有限公司 总经理',
-                            'bgColor':'#f7f7f7'
+                            'lev': 2,
+                            'time': '09:00-09:10',
+                            'sort': 'A01',
+                            'title': '欢迎词',
+                            'content': '麦协林 -《SMT China表面组装技术》杂志社出版总监SMT',
+                            'bgColor': '#ffffff'
                         },
                         {
-                            'lev':2,
-                            'time':'09:30-10:10',
-                            'sort':'A03',
-                            'title':'选择性波峰焊技术',
-                            'content':'陈伟 - Kurtz Ersa库尔特埃莎亚洲有限公司 总经理',
-                            'bgColor':'#ffffff'
+                            'lev': 2,
+                            'time': '09:10-09:30',
+                            'sort': 'A02',
+                            'title': '激光条码雕刻系统在SMT智慧生产的应用',
+                            'content': '彭其鸿 - 新迪精密科技有限公司 总经理',
+                            'bgColor': '#f7f7f7'
                         },
                         {
-                            'lev':2,
-                            'time':'10:10-10:45',
-                            'sort':'A04',
-                            'title':'IMS与工业4.0（二）',
-                            'content':'李文权 - 广东盘古信息科技股份有限公司 资深智能制造顾问',
-                            'bgColor':'#f7f7f7'
+                            'lev': 2,
+                            'time': '09:30-10:10',
+                            'sort': 'A03',
+                            'title': '选择性波峰焊技术',
+                            'content': '陈伟 - Kurtz Ersa库尔特埃莎亚洲有限公司 总经理',
+                            'bgColor': '#ffffff'
                         },
                         {
-                            'lev':1,
-                            'time':'10:45-10:55',
-                            'sort':'',
-                            'title':'',
-                            'content':'茶歇及参观展示',
-                            'bgColor':'#95c6dc'
+                            'lev': 2,
+                            'time': '10:10-10:45',
+                            'sort': 'A04',
+                            'title': 'IMS与工业4.0（二）',
+                            'content': '李文权 - 广东盘古信息科技股份有限公司 资深智能制造顾问',
+                            'bgColor': '#f7f7f7'
                         },
                         {
-                            'lev':2,
-                            'time':'10:55-11:20',
-                            'sort':'A05',
-                            'title':'气体在电子制造中的技术应用',
-                            'content':'余允红 - 液化空气（中国）投资有限公司 亚太区电子产品和元器件应用技术经理',
-                            'bgColor':'#ffffff'
+                            'lev': 1,
+                            'time': '10:45-10:55',
+                            'sort': '',
+                            'title': '',
+                            'content': '茶歇及参观展示',
+                            'bgColor': '#95c6dc'
                         },
                         {
-                            'lev':2,
-                            'time':'11:20-11:45',
-                            'sort':'A06',
-                            'title':'高速点胶应用概论',
-                            'content':'李勇 - 东莞市安达自动化设备有限公司 市场部经理',
-                            'bgColor':'#f7f7f7'
+                            'lev': 2,
+                            'time': '10:55-11:20',
+                            'sort': 'A05',
+                            'title': '气体在电子制造中的技术应用',
+                            'content': '余允红 - 液化空气（中国）投资有限公司 亚太区电子产品和元器件应用技术经理',
+                            'bgColor': '#ffffff'
                         },
                         {
-                            'lev':2,
-                            'time':'11:45-12:10',
-                            'sort':'A07',
-                            'title':'品质提升与工艺改善解决方案',
-                            'content':'张滔俊 - 明锐理想科技有限公司 副总经理兼技术总监',
-                            'bgColor':'#ffffff'
+                            'lev': 2,
+                            'time': '11:20-11:45',
+                            'sort': 'A06',
+                            'title': '高速点胶应用概论',
+                            'content': '李勇 - 东莞市安达自动化设备有限公司 市场部经理',
+                            'bgColor': '#f7f7f7'
                         },
                         {
-                            'lev':1,
-                            'time':'12:10-13:15',
-                            'sort':'',
-                            'title':'',
-                            'content':'午餐及参观展示',
-                            'bgColor':'#95c6dc'
+                            'lev': 2,
+                            'time': '11:45-12:10',
+                            'sort': 'A07',
+                            'title': '品质提升与工艺改善解决方案',
+                            'content': '张滔俊 - 明锐理想科技有限公司 副总经理兼技术总监',
+                            'bgColor': '#ffffff'
                         },
                         {
-                            'lev':2,
-                            'time':'08:00-15:00',
-                            'sort':'A08',
-                            'title':'有奖提问',
-                            'content':'',
-                            'bgColor':'#f7f7f7'
+                            'lev': 1,
+                            'time': '12:10-13:15',
+                            'sort': '',
+                            'title': '',
+                            'content': '午餐及参观展示',
+                            'bgColor': '#95c6dc'
                         },
                         {
-                            'lev':2,
-                            'time':'11:20-11:45',
-                            'sort':'A09',
-                            'title':'细间距高密度PCB印刷工艺优化研究',
-                            'content':'陈勇- 深圳环城自动化设备有限公司 工艺经理',
-                            'bgColor':'#ffffff'
+                            'lev': 2,
+                            'time': '08:00-15:00',
+                            'sort': 'A08',
+                            'title': '有奖提问',
+                            'content': '',
+                            'bgColor': '#f7f7f7'
                         },
                         {
-                            'lev':2,
-                            'time':'13:50-14:15',
-                            'sort':'A10',
-                            'title':'03015测试及不良管控解决方案',
-                            'content':'吴东 - 思泰克智能科技股份有限公司 服务部经理',
-                            'bgColor':'#f7f7f7'
+                            'lev': 2,
+                            'time': '11:20-11:45',
+                            'sort': 'A09',
+                            'title': '细间距高密度PCB印刷工艺优化研究',
+                            'content': '陈勇- 深圳环城自动化设备有限公司 工艺经理',
+                            'bgColor': '#ffffff'
                         },
                         {
-                            'lev':2,
-                            'time':'14:15-14:40',
-                            'sort':'A11',
-                            'title':'分板机需求与发展历程分析',
-                            'content':'郭卫群 - 东莞市智茂自动化设备有限公司 销售总监',
-                            'bgColor':'#ffffff'
+                            'lev': 2,
+                            'time': '13:50-14:15',
+                            'sort': 'A10',
+                            'title': '03015测试及不良管控解决方案',
+                            'content': '吴东 - 思泰克智能科技股份有限公司 服务部经理',
+                            'bgColor': '#f7f7f7'
                         },
                         {
-                            'lev':2,
-                            'time':'14:40-15:05',
-                            'sort':'A12',
-                            'title':'移动互联网+智能制造工厂',
-                            'content':'汪阳名 - 深圳市深科特信息技术有限公司 销售总监',
-                            'bgColor':'#f7f7f7'
+                            'lev': 2,
+                            'time': '14:15-14:40',
+                            'sort': 'A11',
+                            'title': '分板机需求与发展历程分析',
+                            'content': '郭卫群 - 东莞市智茂自动化设备有限公司 销售总监',
+                            'bgColor': '#ffffff'
                         },
                         {
-                            'lev':2,
-                            'time':'15:05-15:30',
-                            'sort':'A13',
-                            'title':'水基清洗技术',
-                            'content':'李爱良 - 中山翰华锡业有限公司 研发技术经理',
-                            'bgColor':'#ffffff'
+                            'lev': 2,
+                            'time': '14:40-15:05',
+                            'sort': 'A12',
+                            'title': '移动互联网+智能制造工厂',
+                            'content': '汪阳名 - 深圳市深科特信息技术有限公司 销售总监',
+                            'bgColor': '#f7f7f7'
                         },
                         {
-                            'lev':2,
-                            'time':'15:30-15:55',
-                            'sort':'A14',
-                            'title':'先进的气体应用技术NitroFAS®助您实现高可靠和低成本的焊接工艺',
-                            'content':'张雅卿 - Air Products 空气产品公司 华南区电子应用技术经理',
-                            'bgColor':'#f7f7f7'
+                            'lev': 2,
+                            'time': '15:05-15:30',
+                            'sort': 'A13',
+                            'title': '水基清洗技术',
+                            'content': '李爱良 - 中山翰华锡业有限公司 研发技术经理',
+                            'bgColor': '#ffffff'
                         },
                         {
-                            'lev':2,
-                            'time':'15:55-16:20',
-                            'sort':'A15',
-                            'title':'SMT焊接零缺陷的稳健，全面，智能化实现',
-                            'content':'张坤泉 - ESAMBER 中国服务中心 技术服务总监',
-                            'bgColor':'#ffffff'
+                            'lev': 2,
+                            'time': '15:30-15:55',
+                            'sort': 'A14',
+                            'title': '先进的气体应用技术NitroFAS®助您实现高可靠和低成本的焊接工艺',
+                            'content': '张雅卿 - Air Products 空气产品公司 华南区电子应用技术经理',
+                            'bgColor': '#f7f7f7'
                         },
                         {
-                            'lev':1,
-                            'time':'16:20-16:30',
-                            'sort':'',
-                            'title':'',
-                            'content':'茶歇及参观展示',
-                            'bgColor':'#f4bd45'
+                            'lev': 2,
+                            'time': '15:55-16:20',
+                            'sort': 'A15',
+                            'title': 'SMT焊接零缺陷的稳健，全面，智能化实现',
+                            'content': '张坤泉 - ESAMBER 中国服务中心 技术服务总监',
+                            'bgColor': '#ffffff'
                         },
                         {
-                            'lev':2,
-                            'time':'16:30-17:00',
-                            'sort':'A16',
-                            'title':'片式贴装器件失效机理及对策',
-                            'content':'薛广辉 - SMT China技朮顾问SMTC',
-                            'bgColor':'#f7f7f7'
+                            'lev': 1,
+                            'time': '16:20-16:30',
+                            'sort': '',
+                            'title': '',
+                            'content': '茶歇及参观展示',
+                            'bgColor': '#f4bd45'
                         },
                         {
-                            'lev':2,
-                            'time':'17:00-17:10',
-                            'sort':'A17',
-                            'title':'幸运抽奖',
-                            'content':'',
-                            'bgColor':'#ffffff'
+                            'lev': 2,
+                            'time': '16:30-17:00',
+                            'sort': 'A16',
+                            'title': '片式贴装器件失效机理及对策',
+                            'content': '薛广辉 - SMT China技朮顾问SMTC',
+                            'bgColor': '#f7f7f7'
+                        },
+                        {
+                            'lev': 2,
+                            'time': '17:00-17:10',
+                            'sort': 'A17',
+                            'title': '幸运抽奖',
+                            'content': '',
+                            'bgColor': '#ffffff'
                         }
-					]
-				}
+                    ],
+                    msg: {
+                        bannerP: ["提高生产力，增强可靠性", "智能制造以及可靠性提升方案"],
+                        companyName: 'SbSTC',
+                        companyAddress: '深圳',
+                        companyTime: '2018/3/29',
+                        msgTitle: "SbSTC深圳2018会议 报名信息",
+                        msgTip: [
+                            "中文名",
+                            "公司(中文)",
+                            "部门",
+                            "职务",
+                            "手机",
+                            "电话",
+                            "电邮",
+                            "公司地址",
+                            "公司职务",
+                            "公司的最终产品或服务"
+                        ],
+                        msgContent: [
+                            "王文杰",
+                            "恒帝信息科技有限公司",
+                            "技术部",
+                            "技术开发",
+                            "13789876543",
+                            "5837652",
+                            "wangwenjie@163.com",
+                            "广州市海珠区琶洲商业广场11栋710",
+                            "公司管理",
+                            "通信系统或设备、工业电子控制、系统或设备"
+                        ]
+                    },
+					registerStatus:0,
+                    layer:''
+                },
+				mounted:function () {
+                    var self = this;
+                    this.$nextTick(function () {
+						$('#popRegister').height($(window).height()-$('.secondNav').height());
+					});
+                    layui.use('layer', function(){
+                        self.layer = layui.layer;
+
+                    });
+                },
+                methods:{
+					showPop:function () {
+					    var self = this;
+						if(self.registerStatus == 0)
+						{
+                            $('#popRegister').show();
+                            $('#popRegister').on('click',function (event) {
+								$(this).hide();
+                            });
+                            $('#popRegister .popRegister button').on('click',function (event) {
+                                event.stopPropagation();
+                                //签到成功改变状态
+                                self.registerStatus=1;
+                                $('#popRegister').hide();
+                            });
+						}else{
+							self.layer.msg('您已经签到！')
+						}
+
+                    }
+                }
 			})
 		</script>
 		<!--删除不良信息-->

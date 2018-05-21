@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+		<meta content="telephone=no" name="format-detection"/>
+		<link rel="stylesheet" href="css/reset.min.css" />
+		<link rel="stylesheet" href="css/public.css"/>
+		<link rel="stylesheet" href="css/mt_mYmeeting.css">
+		<script>
+            (function(doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function() {
+                        var clientWidth = docEl.clientWidth;
+                        if(!clientWidth) return;
+                        if(clientWidth >= 750) {
+                            docEl.style.fontSize = '100px';
+                        } else {
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+                if(!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+		</script>
+		<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<!--删除不良信息-->
+		<div class="delete1" hidden="hidden"></div>
+
+		<div id="main">
+			<!--导航-->
+			<div class="secondNav">
+				<a class="returnNav"><img src="img/navLeft.png" /></a>
+				<p>SbSTC.我的会议</p>
+			</div>
+			<div class="main">
+				<div class="login">
+					<div class="headImg">
+						<div class="headImgIn">
+							<img  :src="wx.wxSrc==''?'img/mt_circle.png':wx.wxSrc" />
+						</div>
+						<div class="vip">
+							<img src="img/mt_vip.png" />
+						</div>
+					</div>
+					<div class="loginName">
+						<p> {{wx.wxName==''?'未设置名称':wx.wxName}}</p>
+						<span>受邀听众</span>
+					</div>
+					<a href="###" class="edit">
+						<img src="img/mt_edit.png"/>
+					</a>
+				</div>
+				<div class="meetingBox">
+					<div class="noMeeting" v-if="wx.wxMeeting.length == 0">
+						<ul>
+							<li>
+								<p>您还没有报名任何会议</p>
+							</li>
+							<li>
+								<p>“快去报名最新会议吧”</p>
+							</li>
+							<li>
+								<a href="###">会议报名</a>
+							</li>
+						</ul>
+					</div>
+					<div class="meetings" v-else>
+						<a href="###" class="mtChild" v-for="(item,index) in wx.wxMeeting">
+							<div class="mtTitle">
+								<p>{{item.name}}</p>
+							</div>
+							<div class="mtContent">
+								<p class="mtAddress">{{item.address}}</p>
+								<p class="mtTime">{{item.time}}</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script>
+            var  app = new Vue({
+                el:'#main',
+                data: {
+                    wx:{
+                        wxSrc:'img/mt-head.png',
+						wxName:'',
+						wxMeeting:[
+							{
+							    name:'SbSTC深圳2018会议',
+								address:'深圳圣淘沙酒店翡翠店 四楼 翡翠厅',
+								time:'2018-3-29 8:00-17:10'
+							},
+                            {
+                                name:'SbSTC深圳2018会议',
+                                address:'深圳圣淘沙酒店翡翠店 四楼 翡翠厅',
+                                time:'2018-3-29 8:00-17:10'
+                            },
+                            {
+                                name:'SbSTC深圳2018会议',
+                                address:'深圳圣淘沙酒店翡翠店 四楼 翡翠厅',
+                                time:'2018-3-29 8:00-17:10'
+                            },
+                            {
+                                name:'SbSTC深圳2018会议',
+                                address:'深圳圣淘沙酒店翡翠店 四楼 翡翠厅',
+                                time:'2018-3-29 8:00-17:10'
+                            },
+                            {
+                                name:'SbSTC深圳2018会议',
+                                address:'深圳圣淘沙酒店翡翠店 四楼 翡翠厅',
+                                time:'2018-3-29 8:00-17:10'
+                            },
+                            {
+                                name:'SbSTC深圳2018会议',
+                                address:'深圳圣淘沙酒店翡翠店 四楼 翡翠厅',
+                                time:'2018-3-29 8:00-17:10'
+                            }
+						]
+					}
+                },
+				mounted:function () {
+                    setTimeout(function () {
+                        $('.noMeeting').height($(window).height()-$('.login').height()-parseInt($('.login').css('padding-top'))*2-$('.secondNav').height());
+                    },200);
+                }
+            });
+		</script>
+		<!--删除不良信息-->
+		<div class="delete2" hidden="hidden"></div>
+	</body>
+</html>
