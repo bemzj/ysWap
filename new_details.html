@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+		<meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" href="css/reset.min.css" />
+		<link rel="stylesheet" href="css/public.css"/>
+		<link rel="stylesheet" href="css/mt_index.css">
+        <style>
+            #main{
+                padding-top: 1.0rem;
+            }
+            #main .msg .msgTitle{
+                width: 92%;
+                text-align: center;
+                color: #333333;
+                padding: 0.8rem 0 0.4rem;
+                line-height: 0.5rem;
+                font-size: 0.4rem;
+                margin: 0 auto;
+            }
+            #main .msg .fullText{
+                width: 92%;
+                margin: 0 auto 0.8rem;
+                color: #666666;
+                line-height: 0.6rem;
+                text-indent: 0.56rem;
+                font-size: 0.28rem;
+                text-align: justify;
+
+            }
+            p{
+                min-height: 0.6rem;
+            }
+        </style>
+		<script>
+            (function(doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function() {
+                        var clientWidth = docEl.clientWidth;
+                        if(!clientWidth) return;
+                        if(clientWidth >= 750) {
+                            docEl.style.fontSize = '100px';
+                        } else {
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+                if(!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+		</script>
+        <script src="js/swiper-3.4.2.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+		<script src="js/public.js"></script>
+	</head>
+	<body>
+		<!--删除不良信息-->
+		<div class="delete1" hidden="hidden"></div>
+        <div id="main">
+            <div class="secondNav">
+                <a class="returnNav"><img src="img/navLeft.png" /></a>
+                <p>SbSTC.我的会议</p>
+            </div>
+            <div class="msg">
+                <div class="msgTitle">
+                    <p>{{msg.title}}</p>
+                </div>
+                <div class="fullText">
+                    <p v-for="(item,index) in msg.pList">{{item}}</p>
+                </div>
+            </div>
+            <!--底部-->
+            <div class="bottomFoot">
+                <ul>
+                    <li>
+                        <p>Step-by-StepTechnical Conference</p>
+                    </li>
+                    <li>
+                        <p>一步步新技术研讨会</p>
+                    </li>
+                    <li>
+                        <div class="bottomNav clearFloat">
+                            <div  v-for="(item,index) in bottomNav.bNav">
+                                <a :href="item.link">{{item.navName}}</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="copy">
+                    <p>{{bottomNav.copy}}</p>
+                </div>
+            </div>
+        </div>
+		<script>
+            var  app = new Vue({
+                el: '#main',
+                data: {
+                    msg:{
+                        title:'智能制造',
+                        pList:[
+                            '尽管世界经济疲软，2017 年中国电子制造业仍然将保持强势。为了摆脱对于出口的依赖，中国正在实施一项战略，从劳动密集型、低附加值的商业模式，转向更高利润率的清洁产业，为中国自己生产商品。中国政府正在实施“中国制造 2025”战略，国务院总理李克强在政府工作报告中提出：“制造业是我们的优势产业。要实施“中国制造2025”，坚持创新驱动、智能转型、强化基础、绿色发展，加快从制造大国转向制造强国。”',
+                            '',
+                            '“中国制造 2025”明确提出将大力推动重点领域突破发展，聚焦新一代信息技术产业、高档数控机床和机器人、航空航天装备、海洋工程装备及高技术船舶、先进轨道交通装备、节能与新能源汽车、电力装备、农机装备、新材料、生物医药及高性能医疗器械十大重点领域。这些战略性行业大多离不开电子技术和产品。',
+                            '',
+                            '然而，制造电子产品极具挑战性和竞争性。除了降低制造成本和更快地向市场推出产品以外，中国的电子产品制造商将面临新的要求：他们的生产线要满足更高的精度，更好的可靠性和更多的功能 ─ 事实上，他们的整个生产流程都要同时满足更加严格的环保方针。',
+                            '',
+                            '同时，制造商将面临人力资源问题。一方面是在工厂中要维持充足的训练有素的操作员和工人，另一方面是全球经济不稳定当前订单无法预测。再且是这些训练有素的操作员和工人的劳动力成本上涨。因此，对于中国的电子产品制造商而言，接受工厂自动化走向智能制造新时代看来是最可行的解决方案。',
+                            '',
+                            '但是，应如何实现从现在到未来的转变。',
+                            '',
+                            'SbSTC 系列研讨会是为上游供货商及电子制造厂商而设计的一系列技术交流平台，有利于业界了解电子自动化发展趋势，及探讨先进电子制造解决方案。会议依遁各地特色，以满足中国不同的城市 / 地区特定行业的需求。自 2012 年 12 月开始由 ACT International 雅时国际商讯主办的 SbSTC 系列研讨会已经在合肥、东莞、成都、苏州、郑州、武汉、杭州、南昌、重庆、北京 、深圳、惠州和佛山等吸引超过 10,000 名参会者，2018 年将会开拓更多更大的潜力市场，为业界提供更多直接交流机会。',
+                            '',
+                            'The electronic manufacturing industry in China will remain strong in the coming years in spite of the world economy going soft in 2017. To move away from an export-based economy, China is implementing a strategy to progress from a labor-intensive, low value-added business model to one that promotes higher margin, cleaner industries that produce goods made by China for China. Quoting China’s premier Li Keqiang: "We will implement the ‘Made in China 2025’ strategy, seek innovation-driven development,  apply smart technologies, strengthen foundations, pursue green development and redouble our efforts to upgrade China from a manufacturer of quantity to one of quality of "Made in China 2025".',
+                            '',
+                            'Ten strategic sectors are targeted under the "Made in China 2015" program; new advanced information technology; automated machine tools and robotics; aerospace and aeronautical equipment maritime equipment and high-tech shipping; modern rail transport equipment; new-energy vehicles and equipment; power equipment; agricultural equip-ment; new materials; and biopharma and advanced medical products. Most, if not all of these strategic sectors include electronics.',
+                            '',
+                            'Nevertheless, manufacturing electronic products is extremely challenging and competitive. In addition to the constant pressure to reduce manufacturing costs and get products to market faster, China’s electronics manufacturers will face new requirements for higher accuracies, better reliability, and more functionality from their production lines — in fact, from their entire manufacturing processes, all while meeting more stringent environmental guidelines.',
+                            '',
+                            'Simultaneously, manufacturers will be faced with staffing concerns. One is maintaining adequate levels of trained operators and workers on their factory floors in an environment where orders aren’t predictable in the current, unstable global economy. Another concern is the rising labor costs for those trained operators and workers. Consequently, embracing factory automation and evolving towards a new era of intelligent manufacturing appears to be the most viable solution for China’s electronics manufacturers.',
+                            '',
+                            'But, how do they get from here to there.',
+                            '',
+                            'The Step-by-Step Technical Conference (SbSTC) is the benchmark series of conferences which provide networking opportunites for upstream suppliers and manufacturers to discuss technology trends of advanced factory automations and to explore applicable technical solutions. The conferences are localized to meet the particular needs of the industries found in the different cities / regions across China. Organized by ACT International, since December 2012 the SbSTC conferences have attracted over 6,000 attendees in Hefei, Dongguan, Chengdu, Suzhou, Zhengzhou, Wuhan, Hangzhou, Huizhou and Foshan with the anticipation of reaching more potential markets in 2017, providing yet even more networking opportunities for the industry.',
+                            '',
+                            '由香港雅时国际商讯主办的"一步步新技术研讨会（SbSTC）"将于2018年3月29日 深圳圣淘沙酒店翡翠店举办，围绕着"智能制造以及可靠性提升方案"热点主题，邀请到松下、摩尔等智能制造企业，以及凯格、斯倍利亚、乐普科等PCBA的供应商及方案商，从业界先进的焊接材料、印刷工艺与盲区、焊接盲区及误区、点胶技术、世界先进检测技术、清洗制程及要求等基础工艺步骤逐一深入探讨，为您答疑解惑，与现场观众共同探讨研究在严苛经济环境下如何夯实基础，提升公司综合竞争力，加速实现智慧工厂的全产业链升级。'
+                        ]
+                    },
+                    bottomNav:{
+                        copy:'Copyright© 2018: 《SMT China 表面组装技术》',
+                        bNav:[
+                            {
+                                'navName':'首页',
+                                'link':'mt_index.html'
+                            },
+                            {
+                                'navName':'听众登记',
+                                'link':'mt_registration.html',
+                            },
+                            {
+                                'navName':'会议资讯',
+                                'link':'mt_news.html',
+                            },
+                            {
+                                'navName':'关于我们',
+                                'link':'mt_about.html',
+                            },
+                            {
+                                'navName':'关注我们',
+                                'link':'mt_follow.html'
+                            }
+
+                        ]
+                    }
+                }
+            });
+		</script>
+		<!--删除不良信息-->
+		<div class="delete2" hidden="hidden"></div>
+	</body>
+</html>

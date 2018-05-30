@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="lib/css/layui.mobile.css" />
 		<link rel="stylesheet" href="css/reset.min.css" />
 		<link rel="stylesheet" href="css/public.css"/>
-		<link rel="stylesheet" href="css/mt_details_3.css">
+		<link rel="stylesheet" href="css/mymt_details_3.css">
 		<script>
             (function(doc, win) {
                 var docEl = doc.documentElement,
@@ -34,6 +34,7 @@
 		<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 		<script src="lib/layui.js"></script>
+		<script src="js/public.js"></script>
 	</head>
 	<body>
 		<!--删除不良信息-->
@@ -67,7 +68,6 @@
 						<p v-for = 'item in msg.bannerP'>{{item}}</p>
 						<span>{{msg.companyName}}{{msg.companyAddress}} {{msg.companyTime}}</span>
 					</div>
-
 				</div>
 				<div class="personMsg">
 					<div class="msgTitle">
@@ -82,7 +82,7 @@
 			</div>
 			<div class="plan" v-if="meetIndex==1">
 				<div class="time contentBox">
-					<p>会议时间：2018-3-28（星期四）</p>
+					<p>会议时间：{{planTime}}</p>
 				</div>
 				<div class="planBox">
 					<div  v-for="(item,index) in all" :style="{'background-color':item.bgColor}">
@@ -137,7 +137,7 @@
 			<div class="popRegister">
 				<img src="img/mt_register.png" />
 				<button></button>
-				<a href="mt_erCode.html"></a>
+				<a href="mymt_erCode.html"></a>
 			</div>
 		</div>
 		<script>
@@ -152,6 +152,7 @@
                         "phone": "0755-26390888",
                         "position": "位于市深圳南山区地铁1号线（罗宝线）桃园地铁B出口直行100米右转从田厦新邨牌坊直行200米到达"
                     },
+					planTime:"2018-3-28（星期四）",
                     all: [
                         {
                             'lev': 1,

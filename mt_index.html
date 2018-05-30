@@ -2,14 +2,15 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>登录</title>
+		<title>首页</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 		<meta content="yes" name="apple-mobile-web-app-capable"/>
 		<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 		<meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" href="css/reset.min.css" />
 		<link rel="stylesheet" href="css/public.css"/>
-		<link rel="stylesheet" href="css/mt_index_login.css">
+		<link rel="stylesheet" href="css/mt_index.css">
 		<script>
             (function(doc, win) {
                 var docEl = doc.documentElement,
@@ -29,27 +30,379 @@
                 doc.addEventListener('DOMContentLoaded', recalc, false);
             })(document, window);
 		</script>
+        <script src="js/swiper-3.4.2.min.js"></script>
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+		<script src="js/public.js"></script>
 	</head>
 	<body>
 		<!--删除不良信息-->
 		<div class="delete1" hidden="hidden"></div>
-		<!--导航-->
-		<div class="secondNav">
-			<a class="returnNav"><img src="img/navLeft.png" /></a>
-			<p>SbSTC.我的会议</p>
-		</div>
 		<div id="main">
-			<a href="###" class="login">
-				<div class="headImg">
-					<img src="img/mt_circle.png"/>
+			<!--导航-->
+			<div class="secondNav">
+				<a class="returnNav"><img src="img/navLeft.png" /></a>
+				<p>SbSTC.我的会议</p>
+				<a class="personCenter"><img src="img/person.png"/></a>
+			</div>
+			<div class="main">
+                <!--二级导航-->
+                <div class="outSelect">
+                    <div class="allSelect">
+                        <div v-for="(item,index) in navlink">
+                            <a :href="item.link" :class="{hasSelect:item.status==1}">{{item.navName}}</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 顶部banner-->
+                <a :href="topBanner.link" class="topBanner">
+                    <img :src="topBanner.src"/>
+                    <div class="bannerContent">
+                        <ul>
+                            <li>
+                                <p>{{topBanner.cTitle}}</p>
+                            </li>
+                            <li>
+                                <p class="eng">{{topBanner.enTitle}}</p>
+                            </li>
+                            <li>
+                                <p>{{topBanner.address}} {{topBanner.time}}</p>
+                            </li>
+                        </ul>
+                        <img src="img/readMore.png"/>
+                    </div>
+                </a>
+                <div class="topLitterBanner">
+                    <div class="swiper-container swiper-container-index">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="(item,index) in topBanner.banners">
+                                <a href="###">
+                                    <img :src="item.src" :alt="item.title" />
+                                    <div>
+                                        <p>{{item.title}}</p>
+                                        <span>
+                                            查看详情
+                                            <img src="img/more.png" />
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="meetingHelp">
+                    <div class="titles">
+                        <ul>
+                            <li>
+                                <p>会议赞助</p>
+                            </li>
+                            <li></li>
+                            <li>
+                                <p>Sponsors</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="allHelp clearFloat">
+                        <div class="floatl" v-for="(item,index) in allCompany">
+                            <img :src="item"/>
+                        </div>
+                    </div>
+                    <div class="support">
+                        <a href="###">赞助咨询</a>
+                    </div>
+                </div>
+                <!--会议场地-->
+                <div class="field" >
+                    <div class="titles">
+                        <ul>
+                            <li>
+                                <p>会议场地</p>
+                            </li>
+                            <li  style="border-color:#45acda;"></li>
+                            <li>
+                                <p>CONFERENCE SITE</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fieldBox contentBox">
+                        <div class="fieldImg">
+                            <img src="img/mt_img.png" />
+                        </div>
+                        <div class="fieldContent">
+                            <ul>
+                                <li>
+                                    <p><span>{{fieldMsg.name}}</span></p>
+                                </li>
+                                <li>
+                                    <p><span>地址：</span>{{fieldMsg.address}}</p>
+                                </li>
+                                <li>
+                                    <p><span>电话：</span><a :href="'tel:'+fieldMsg.phone">{{fieldMsg.phone}}</a></p>
+                                </li>
+                                <li>
+                                    <span>地理位置：</span><p>{{fieldMsg.position}}</a></p>
+                                </li>
+                            </ul>
+                        </div>
 
-				</div>
-				<div class="loginName">
-					<p>微信登录</p>
-				</div>
-			</a>
+                    </div>
+                    <div class="twoBtn contentBox">
+                        <a href="###" class="addressBtn">详细地址</a>
+                    </div>
+                </div>
+                <!--往届会议-->
+                <div class="previous">
+                    <div class="titles">
+                        <ul>
+                            <li>
+                                <p>往届会议</p>
+                            </li>
+                            <li style="border-color: #6e63c3"></li>
+                            <li>
+                                <p>PREVIOUS SESSIONS</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="swiper-container swiper-container-bottom">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="(item,index) in bottomBanners">
+                                <a href="###">
+                                    <img :src="item.src" :alt="item.title" />
+                                    <div>
+                                        <img :src="item.srcOn" />
+                                        <span>
+                                            {{item.time}}
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="twoShow">
+                    <div class="clearFloat">
+                        <div class="floatl">
+                            <a href="###"><img src="img/mass.png"/></a>
+                        </div>
+                        <div class="floatr">
+                            <a href="###"><img src="img/sponsor.png"/></a>
+                        </div>
+                    </div>
+                </div>
+                <!--底部-->
+                <div class="bottomFoot">
+                    <ul>
+                        <li>
+                            <p>Step-by-StepTechnical Conference</p>
+                        </li>
+                        <li>
+                            <p>一步步新技术研讨会</p>
+                        </li>
+                        <li>
+                            <div class="bottomNav clearFloat">
+                                <div  v-for="(item,index) in bottomNav.bNav">
+                                    <a :href="item.link">{{item.navName}}</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="copy">
+                        <p>{{bottomNav.copy}}</p>
+                    </div>
+                </div>
+			</div>
+
 		</div>
+		<script>
+            var  app = new Vue({
+                el:'#main',
+                data: {
+                    topBanner:{
+                        cTitle:'一步步新技术研讨会',
+                        enTitle:'Step-by-Step Technical Conference',
+                        src:'img/mt_img1.png',
+                        address:'深圳圣淘沙酒店翡翠店',
+                        time:'2018/3/29',
+                        link:'###',
+                        banners:[
+                            {
+                                src:'img/mt_img2.png',
+                                title:'智能制造'
+                            },
+                            {
+                                src:'img/mt_img2.png',
+                                title:'智能制造'
+                            },
+                            {
+                                src:'img/mt_img2.png',
+                                title:'智能制造'
+                            },
+                            {
+                                src:'img/mt_img2.png',
+                                title:'智能制造'
+                            },
+                            {
+                                src:'img/mt_img2.png',
+                                title:'智能制造'
+                            }
+                        ]
+
+                    },
+                    bottomBanners:[
+                        {
+                            src:'img/mt_index_banner.png',
+                            srcOn:'img/mt_index_banner_on.png',
+                            time:'2017/5.24'
+                        },
+                        {
+                            src:'img/mt_index_banner.png',
+                            srcOn:'img/mt_index_banner_on.png',
+                            time:'2017/5.24'
+                        },
+                        {
+                            src:'img/mt_index_banner.png',
+                            srcOn:'img/mt_index_banner_on.png',
+                            time:'2017/5.24'
+                        },
+                        {
+                            src:'img/mt_index_banner.png',
+                            srcOn:'img/mt_index_banner_on.png',
+                            time:'2017/5.24'
+                        },
+                        {
+                            src:'img/mt_index_banner.png',
+                            srcOn:'img/mt_index_banner_on.png',
+                            time:'2017/5.24'
+                        }
+                    ],
+                    fieldMsg: {
+                        "name": "深圳圣淘沙酒店翡翠店",
+                        "address": "深圳市南山区金鸡路1号翡翠明珠花园",
+                        "phone": "0755-26390888",
+                        "position": "位于市深圳南山区地铁1号线（罗宝线）桃园地铁B出口直行100米右转从田厦新邨牌坊直行200米到达"
+                    },
+                    allCompany:[
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png',
+                        'img/mtc1.png'
+                    ],
+					navlink:[
+						{
+						    'navName':'首页',
+							'link':'mt_index.html',
+                            'status':1
+						},
+                        {
+                            'navName':'听众登记',
+                            'link':'mt_registration.html',
+                            'status':0
+                        },
+                        {
+                            'navName':'演讲嘉宾',
+                            'link':'mt_speaker.html',
+                            'status':0
+                        },
+                        {
+                            'navName':'会议议程',
+                            'link':'mt_agenda.html',
+                            'status':0
+                        },
+                        {
+                            'navName':'赞助企业',
+                            'link':'mt_enterprise.html',
+                            'status':0
+                        },
+                        {
+                            'navName':'赞助资讯',
+                            'link':'mt_Consultation.html',
+                            'status':0
+                        },
+                        {
+                            'navName':'往届回顾',
+                            'link':'mt_past.html',
+                            'status':0
+                        },
+                        {
+                            'navName':'关于我们',
+                            'link':'mt_about.html',
+                            'status':0
+                        }
+					],
+                    bottomNav:{
+                        copy:'Copyright© 2018: 《SMT China 表面组装技术》',
+                        bNav:[
+                            {
+                                'navName':'首页',
+                                'link':'mt_index.html'
+                            },
+                            {
+                                'navName':'听众登记',
+                                'link':'mt_registration.html',
+                            },
+                            {
+                                'navName':'会议资讯',
+                                'link':'mt_news.html',
+                            },
+                            {
+                                'navName':'关于我们',
+                                'link':'mt_about.html',
+                            },
+                            {
+                                'navName':'关注我们',
+                                'link':'mt_follow.html'
+                            }
+
+                        ]
+                    }
+
+
+                },
+                mounted:function () {
+                    //实例化轮播图
+                    var mySwiper = new Swiper('.swiper-container-index', {
+                        speed:1000,
+                        autoplayDisableOnInteraction : false,
+                        centeredSlides : true,
+                        slidesPerView:1,
+                        loopedSlides :3,
+                        paginationClickable:true
+                    });
+
+                    var bottom = new Swiper('.swiper-container-bottom', {
+                        speed:1000,
+                        autoplayDisableOnInteraction : false,
+                        centeredSlides : true,
+                        slidesPerView:1,
+                        loopedSlides :3,
+                        paginationClickable:true,
+                        pagination: '.swiper-pagination',
+                        onInit:function () {
+                            $('.swiper-pagination').width($(window).width()*0.92);
+                        }
+                    });
+                }
+            });
+		</script>
 		<!--删除不良信息-->
 		<div class="delete2" hidden="hidden"></div>
 	</body>

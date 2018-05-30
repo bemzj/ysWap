@@ -31,9 +31,80 @@
     font-size: 0.24rem;
     color: white;
     text-align: center; }
+  .secondNav .personCenter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.34rem 0.24rem;
+    height: 1.0rem;
+    box-sizing: border-box; }
+    .secondNav .personCenter > img {
+      height: 100%; }
 
 .contentBox {
   width: 92%;
   margin: 0 auto; }
+
+.bottomFoot {
+  width: 100%;
+  background-color: #333333; }
+  .bottomFoot ul {
+    width: 92%;
+    margin: 0 auto;
+    padding: 0.5rem 0; }
+    .bottomFoot ul li {
+      font-size: 0.18rem;
+      color: #ffffff; }
+    .bottomFoot ul li:nth-child(2) {
+      font-size: 0.3rem;
+      font-weight: bold;
+      line-height: 0.4rem;
+      margin-top: 0.05rem; }
+    .bottomFoot ul li:nth-child(3) {
+      margin-top: 0.2rem; }
+      .bottomFoot ul li:nth-child(3) .bottomNav {
+        font-size: 0.22rem;
+        line-height: 0.22rem;
+        color: rgba(255, 255, 255, 0.7); }
+        .bottomFoot ul li:nth-child(3) .bottomNav > div a {
+          float: left;
+          color: white;
+          padding: 0 0.16rem;
+          border-right: 1px solid #717171; }
+        .bottomFoot ul li:nth-child(3) .bottomNav > div:nth-last-child(1) a {
+          border-right: 0px; }
+  .bottomFoot .copy {
+    text-align: center;
+    font-size: 0.22rem;
+    line-height: 0.4rem;
+    padding: 0.1rem 0;
+    color: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
+.main .outSelect {
+  width: 100%;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  font-size: 0.3rem; }
+.main .allSelect {
+  width: 100%;
+  display: -webkit-box; }
+  .main .allSelect div {
+    width: 1.7rem;
+    height: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: column; }
+    .main .allSelect div a {
+      font-size: 0.3rem;
+      color: #333333;
+      display: inline-block; }
+    .main .allSelect div .hasSelect {
+      color: #dda430; }
 
 /*# sourceMappingURL=public.css.map */
