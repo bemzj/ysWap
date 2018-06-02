@@ -1,0 +1,55 @@
+#main {
+  width: 100%;
+  overflow-x: hidden;
+  padding-top: 1rem;
+  font-size: 0.26rem;
+  background-color: #f7f7f7;
+  color: #333333; }
+
+.preList {
+  padding-bottom: 0.9rem; }
+  .preList .listChild {
+    width: 100%;
+    background-color: white;
+    border-radius: 0.08rem;
+    overflow: hidden;
+    margin-top: 0.3rem;
+    display: block;
+    border: 1px solid #eeeeee;
+    box-sizing: border-box; }
+    .preList .listChild .listImg {
+      width: 100%;
+      position: relative; }
+      .preList .listChild .listImg .lyear {
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 0.54rem;
+        color: #ffffff;
+        font-size: 0.24rem;
+        padding: 0 0.2rem;
+        background-color: #95c6dc; }
+      .preList .listChild .listImg img {
+        width: 100%; }
+    .preList .listChild .lcText {
+      padding: 0.1rem 0.25rem;
+      line-height: 0.45rem;
+      position: relative; }
+      .preList .listChild .lcText .rd {
+        width: 0.44rem;
+        position: absolute;
+        top: 50%;
+        margin-top: -0.22rem;
+        right: 0.25rem; }
+      .preList .listChild .lcText .lcTitle {
+        height: 0.6rem;
+        margin: 0.2rem  0; }
+        .preList .listChild .lcText .lcTitle > img {
+          height: 100%; }
+      .preList .listChild .lcText .lcContent {
+        height: 0.54rem;
+        margin: 0.23rem 0.25rem; }
+        .preList .listChild .lcText .lcContent > img {
+          height: 100%; }
+
+/*# sourceMappingURL=mt_newMeeting.css.map */

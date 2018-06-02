@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/reset.min.css" />
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/ydui.css">
+    <link rel="stylesheet" href="css/mobiscroll.custom.min.css">
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/VA-apply.css">
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if(!clientWidth) return;
+                    if(clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+<!--删除不良信息-->
+<div class="delete1" hidden="hidden"></div>
+<div id="apply">
+    <!--导航-->
+    <div class="secondNav">
+        <a class="returnNav"><img src="img/navLeft.png" /></a>
+        <p>VA远见奖</p>
+        <a class="personCenter"><img src="img/person.png"/></a>
+    </div>
+    <!--nav-->
+    <div class="main">
+        <div class="outSelect" style="background: #ffffff">
+            <div class="allSelect">
+                <div v-for="(item,index) in navlink">
+                    <a href="###" :class="{hasSelect:item.status==1}">{{item.navName}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list2-title">
+        <span>第十二届VA远见奖报名</span>
+    </div>
+    <div class="list3">
+        <div class="l3-wrap">
+            <ul>
+                <li>参选公司基本信息</li>
+                <li>
+                    <span>公司(中文)：</span><input type="text" placeholder="请输入公司名称(中文)"/>
+                </li>
+                <li>
+                    <span>公司(英文)：</span><input type="text" placeholder="请输入公司名称(英文)"/>
+                </li>
+                <li>
+                    <span>公司类型：</span>
+                    <div class="select">
+                        <input type="text" disabled placeholder="请选择">
+                        <select name="type" id="type">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <span class="icon"></span>
+                </li>
+                <li>
+                    <span>公司地址：</span>
+                    <div>
+                        <input type="text" id="acity" placeholder="请选择省、市、区">
+                    </div>
+                    <span class="icon"></span>
+                </li>
+                <li class="addressDetail">
+                    <span>公司详细地址：</span><input type="text" placeholder="请输入公司详细地址"/>
+                </li>
+            </ul>
+        </div>
+        <div class="l3-wrap l3-wrap2">
+            <ul>
+                <li>联系人</li>
+                <li>
+                    <span>姓名：</span><input type="text" placeholder="请输入姓名"/>
+                </li>
+                <li>
+                    <span>电邮：</span><input type="text" placeholder="请输入邮件"/>
+                </li>
+                <li>
+                    <span>手机：</span>
+                    <input type="text" placeholder="请输入手机号码">
+                </li>
+                <li>
+                    <span>电话：</span>
+                    <input type="text" placeholder="请输入电话号码">
+                </li>
+            </ul>
+        </div>
+        <div class="l3-wrap l3-wrap3">
+            <ul>
+                <li>请选择与申报产品匹配的参选项目</li>
+                <li>
+                    <span>产品(中文)：</span><input type="text" placeholder="请输入产品(中文)"/>
+                </li>
+                <li>
+                    <span>产品(英文)：</span><input type="text" placeholder="请输入产品(英文)："/>
+                </li>
+                <li>
+                    <span>发布日期：</span>
+                    <div class="section">
+                        <input type="text" id="demo_datetime" placeholder="请选择"/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="list4">
+        <div class="l4-title">
+            <span>请从下列选择参加项目</span>
+        </div>
+        <div class="l4-wrap">
+            <div class="l4wrap-1">
+                <div class="l4wrap-title">SMT硬件工具类</div>
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>产前准备-PCB吸板机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>产前准备-元器件成型机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>工业电子控制、系统或设备</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>产前准备-静电检测及控制</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>产前准备-静电检测及控制</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>产前准备 锡膏搅拌机</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>锡膏印刷-模板/丝网印刷</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>锡膏印刷-喷射及其他方法</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>锡膏印刷-补充设备</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>贴片-高速机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>贴片-中速机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>贴片-多功能机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>贴片-供料器</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>贴片-点胶模组</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>贴片-助焊膏模组</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>插件-标准机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>插件-异型机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>插件-编带机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>插件-振动盘</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>焊接-再流焊</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>焊接-真空/气相焊</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>焊接-波峰焊</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>特种焊接</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>焊接-温度曲线测量</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>焊接-炉温监控</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>清洗-清洗机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>清洗-钢网AOI</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>清洗-废水处理设备</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>清洗-洁净度检测仪</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>清洗-清洗机</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>清洗-钢网AOI</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>清洗-废水处理设备</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>清洗-洁净度检测仪</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>涂覆-点胶设备</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>涂覆-喷涂设备</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>涂覆-喷涂设备</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>涂覆-UV固化设备</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>涂覆-涂覆检测设备</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>涂覆-厚度测量仪</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>检测-SPI</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>检测-AOI</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>检测-AXI</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>检测-ICT</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>检测-FCT</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>返修-拆焊工具</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>返修-AOI+选择性波峰焊</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>装配-装配工具</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="l4-wrap">
+            <div class="l4wrap-1">
+                <div class="l4wrap-title">软件工具类</div>
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>设计类工具软件</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>工程类工具软件</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>管理类工具软件</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>嵌入式软件</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="l4-wrap">
+            <div class="l4wrap-1">
+                <div class="l4wrap-title">材料类</div>
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>焊锡合金</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>助焊剂/膏</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>锡膏</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="l4wrap-1">
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>表面涂敷材料</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>底部填充</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>灌封材料</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>导热材料</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>各类清洗剂</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="l4-wrap">
+            <div class="l4wrap-1">
+                <div class="l4wrap-title">环保类</div>
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>软件设计工具</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>软件测试工具</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="l4-wrap">
+            <div class="l4wrap-1">
+                <div class="l4wrap-title">SMT工艺和方法类</div>
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>印刷工艺</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>贴片工艺</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>插件工艺</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>焊接工艺</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>清洗工艺</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>返修工艺</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>WB/DB工艺</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>COB/COG工艺</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="l4-wrap">
+            <div class="l4wrap-1">
+                <div class="l4wrap-title">智能制造</div>
+                <ul>
+                    <li>
+                        <div class="checkbox checkboxSel">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>PLM系统</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>ERP系统</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>MES系统</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>智能仓储</div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <input type="checkbox" @click="selIt">
+                        </div>
+                        <div>智能设备</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="list5">
+        <button>提交</button>
+    </div>
+    <div class="list6">
+        
+    </div>
+    <div class="footer">
+        <div class="l6-wrap1">
+            <img src="img/title04.png" alt="">
+        </div>
+        <div class="l6-wrap2">
+            <div class="name">麦健英 Pauli Mak</div>
+            <div class="info">
+                <div>paulim@actintl.com.hk</div>
+                <div>+852-28386298</div>
+            </div>
+        </div>
+        <div class="l6-wrap3">
+            <div>
+                <div class="cont-title">
+                    <span></span>
+                    香港
+                </div>
+                <div class="cont-info">
+                    <span>总部：</span><span>852-28386298、137606728736</span>
+                </div>
+            </div>
+            <div>
+                <div class="cont-title">
+                    <span></span>
+                    中国区域
+                </div>
+                <div class="cont-info">
+                    <span>北京：</span><span>86-10-67484833、137606728736</span>
+                </div>
+                <div class="cont-info">
+                    <span>上海：</span><span>86-21-62511200、137606728736</span>
+                </div>
+                <div class="cont-info">
+                    <span>深圳：</span><span>86-21-62511200、137606728736</span>
+                </div>
+                <div class="cont-info">
+                    <span>武汉：</span><span>86-27-59233884、137606728736</span>
+                </div>
+            </div>
+        </div>
+        <div class="l6-wrap4">
+            <div>
+                <span>主办：</span><span>香港雅时国际商讯 (ACT International) </span>
+            </div>
+            <div>
+                <span>网址：</span><span>www.actintl.com.hk</span>
+            </div>
+        </div>
+        <div class="l6-wrap5">
+            <div>Copyright© 2018: 《SMT China 表面组装技术》</div>
+        </div>
+    </div>
+</div>
+<script src="js/ydui.citys.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/mobiscroll.custom.min.js"></script>
+<script>
+    var app = new Vue({
+        el: '#apply',
+        data:{
+            navlink:[
+                {
+                    'navName':'首页',
+                    'link':'mt_index.html',
+                    'status':1
+                },
+                {
+                    'navName':'通告',
+                    'link':'mt_registration.html',
+                    'status':0
+                },
+                {
+                    'navName':'评选规则',
+                    'link':'mt_speaker.html',
+                    'status':0
+                },
+                {
+                    'navName':'类别',
+                    'link':'mt_agenda.html',
+                    'status':0
+                },
+                {
+                    'navName':'报名注册',
+                    'link':'mt_enterprise.html',
+                    'status':0
+                },
+                {
+                    'navName':'历届回顾',
+                    'link':'mt_Consultation.html',
+                    'status':0
+                },
+                {
+                    'navName':'联系我们',
+                    'link':'mt_past.html',
+                    'status':0
+                },
+                {
+                    'navName':'ENGLISH',
+                    'link':'mt_about.html',
+                    'status':0
+                }
+            ],
+        },
+        methods:{
+            selIt:function () {
+                console.log(1)
+            }
+        },
+        mounted:function () {
+
+        }
+    })
+    //选择省市区
+    !function () {
+        var $target = $('#acity');
+
+        $target.citySelect();
+
+        $target.on('click', function (event) {
+            event.stopPropagation();
+            $target.citySelect('open');
+        });
+
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+        });
+    }();
+    $('#acity').focusin(function () {
+        $(this).blur();
+    })
+    var theme = "ios";
+    var mode = "scroller";
+    var display = "bottom";
+    var lang="zh";
+    $('#demo_datetime').mobiscroll().datetime({
+        theme: theme,
+        mode: mode,
+        display: display,
+        lang: lang,
+        dateFormat:"yyyy-mm-dd",
+        minDate: new Date(2000,3,10,9,22),
+        maxDate: new Date(2030,7,30,15,44),
+        stepMinute: 1
+    });
+</script>
+</body>
+</html>

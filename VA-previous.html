@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/reset.min.css" />
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/VA-previous.css">
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if(!clientWidth) return;
+                    if(clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+<!--删除不良信息-->
+<div class="delete1" hidden="hidden"></div>
+<div id="main">
+    <!--导航-->
+    <div class="secondNav">
+        <a class="returnNav"><img src="img/navLeft.png" /></a>
+        <p>SbSTC.我的会议</p>
+        <a class="personCenter"><img src="img/person.png"/></a>
+    </div>
+
+    <div class="main">
+        <div class="outSelect" style="background: #ffffff">
+            <div class="allSelect">
+                <div v-for="(item,index) in navlink">
+                    <a href="###" :class="{hasSelect:item.status==1}">{{item.navName}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+        <img :src="banner.src"/>
+        <div class="bannerText">
+            <p>{{banner.zh}}</p>
+            <p>{{banner.en}}</p>
+        </div>
+    </div>
+    <div class="contentBox preList">
+        <a href="###" class="listChild" v-for="(items,index) in listData">
+            <div class="listImg">
+                <img :src="items.src"/>
+                <div class="lyear" :style="{'background-color':listColor[index]}">
+                    <p>{{items.year}}</p>
+                </div>
+            </div>
+            <div class="lcText">
+                <img class="rd" src="img/yellowRM.png" />
+                <div class="lcTitle">
+                    <p>{{items.title}}</p>
+                </div>
+                <div class="lcContent">
+                    <p>{{items.content}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="list6">
+        <div class="l6-wrap1">
+            <img src="img/title04.png" alt="">
+        </div>
+        <div class="l6-wrap2">
+            <div class="name">麦健英 Pauli Mak</div>
+            <div class="info">
+                <div>paulim@actintl.com.hk</div>
+                <div>+852-28386298</div>
+            </div>
+        </div>
+        <div class="l6-wrap3">
+            <div>
+                <div class="cont-title">
+                    <span></span>
+                    香港
+                </div>
+                <div class="cont-info">
+                    <span>总部：</span><span>852-28386298、137606728736</span>
+                </div>
+            </div>
+            <div>
+                <div class="cont-title">
+                    <span></span>
+                    中国区域
+                </div>
+                <div class="cont-info">
+                    <span>北京：</span><span>86-10-67484833、137606728736</span>
+                </div>
+                <div class="cont-info">
+                    <span>上海：</span><span>86-21-62511200、137606728736</span>
+                </div>
+                <div class="cont-info">
+                    <span>深圳：</span><span>86-21-62511200、137606728736</span>
+                </div>
+                <div class="cont-info">
+                    <span>武汉：</span><span>86-27-59233884、137606728736</span>
+                </div>
+            </div>
+        </div>
+        <div class="l6-wrap4">
+            <div>
+                <span>主办：</span><span>香港雅时国际商讯 (ACT International) </span>
+            </div>
+            <div>
+                <span>网址：</span><span>www.actintl.com.hk</span>
+            </div>
+        </div>
+        <div class="l6-wrap5">
+            <div>Copyright© 2018: 《SMT China 表面组装技术》</div>
+        </div>
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: '#main',
+        data:{
+            banner:{
+                src:'img/previous_banner.png',
+                zh:'远见奖颁奖典礼',
+                en:'Vision Awards'
+            },
+            navlink:[
+                {
+                    'navName':'首页',
+                    'link':'mt_index.html',
+                    'status':0
+                },
+                {
+                    'navName':'通告',
+                    'link':'mt_registration.html',
+                    'status':0
+                },
+                {
+                    'navName':'评选规则',
+                    'link':'mt_speaker.html',
+                    'status':0
+                },
+                {
+                    'navName':'类别',
+                    'link':'mt_agenda.html',
+                    'status':0
+                },
+                {
+                    'navName':'报名注册',
+                    'link':'mt_enterprise.html',
+                    'status':0
+                },
+                {
+                    'navName':'历届回顾',
+                    'link':'mt_Consultation.html',
+                    'status':1
+                },
+                {
+                    'navName':'联系我们',
+                    'link':'mt_past.html',
+                    'status':0
+                },
+                {
+                    'navName':'ENGLISH',
+                    'link':'mt_about.html',
+                    'status':0
+                }
+            ],
+            listColor:['#95c6dc','#cbade0','#90c8c3','#f4bd45'],
+            listData:[{
+                href:'###',
+                src:'img/previous_img1.png',
+                year:'2018年',
+                title:'smt china  2017',
+                content:'提高生产力，增强可靠性 智能制造以及智能制造以及'
+            },{
+                href:'###',
+                src:'img/previous_img1.png',
+                year:'2018年',
+                title:'smt china  2017',
+                content:'提高生产力，增强可靠性 智能制造以及智能制造以及'
+            },{
+                href:'###',
+                src:'img/previous_img1.png',
+                year:'2018年',
+                title:'smt china  2017',
+                content:'提高生产力，增强可靠性 智能制造以及智能制造以及'
+            },{
+                href:'###',
+                src:'img/previous_img1.png',
+                year:'2018年',
+                title:'smt china  2017',
+                content:'提高生产力，增强可靠性 智能制造以及智能制造以及'
+            },{
+                href:'###',
+                src:'img/previous_img1.png',
+                year:'2018年',
+                title:'smt china  2017',
+                content:'提高生产力，增强可靠性 智能制造以及智能制造以及'
+            }]
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

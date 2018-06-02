@@ -2,14 +2,14 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>赞助企业</title>
+	<title>听众登记</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<meta content="yes" name="apple-mobile-web-app-capable"/>
 	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="telephone=no" name="format-detection"/>
 	<link rel="stylesheet" href="css/reset.min.css" />
 	<link rel="stylesheet" href="css/public.css"/>
-	<link rel="stylesheet" href="css/mt_index.css">
+	<link rel="stylesheet" href="css/mt_newMeeting.css">
 	<script>
         (function(doc, win) {
             var docEl = doc.documentElement,
@@ -40,37 +40,28 @@
 	<!--导航-->
 	<div class="secondNav">
 		<a class="returnNav"><img src="img/navLeft.png" /></a>
-		<p>SbSTC.我的会议</p>
+		<p><img src="img/smallLogo.png"/></p>
 		<a class="personCenter"><img src="img/person.png"/></a>
 	</div>
 	<div class="main">
-		<div class="outSelect">
-			<div class="allSelect">
-				<div v-for="(item,index) in navlink">
-					<a :href="item.link" :class="{hasSelect:item.status==1}">{{item.navName}}</a>
+		<div class="contentBox preList">
+			<a href="###" class="listChild" v-for="(items,index) in listData">
+				<div class="listImg">
+					<img :src="items.src"/>
+					<div class="lyear" :style="{'background-color':listColor[index]}">
+						<p>{{items.year}}</p>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="meetingHelp" style="margin-top: 0.3rem;">
-			<div class="enterpriseTitles">
-				<ul>
-					<li>
-						<img src="img/enterpriseTitles.png" />
-					</li>
-					<li></li>
-					<li>
-						<p>Sponsors</p>
-					</li>
-				</ul>
-			</div>
-			<div class="allHelp clearFloat">
-				<div class="floatl" v-for="(item,index) in allCompany">
-					<img :src="item"/>
+				<div class="lcText clearFloat">
+					<img class="rd" src="img/grayRM.png" />
+					<div class="lcTitle floatl">
+						<img :src="items.tSrc">
+					</div>
+					<div class="lcContent floatl">
+						<img src="img/cityTitle.png">
+					</div>
 				</div>
-			</div>
-			<div class="supportText">
-				<p>更多赞助，陆续公布……</p>
-			</div>
+			</a>
 		</div>
 		<div class="bottomFoot">
 			<ul>
@@ -99,48 +90,6 @@
     var  app = new Vue({
         el:'#main',
         data: {
-            navlink:[
-                {
-                    'navName':'首页',
-                    'link':'mt_index.html',
-                    'status':0
-                },
-                {
-                    'navName':'听众登记',
-                    'link':'mt_registration.html',
-                    'status':0
-                },
-                {
-                    'navName':'演讲嘉宾',
-                    'link':'mt_speaker.html',
-                    'status':0
-                },
-                {
-                    'navName':'会议议程',
-                    'link':'mt_agenda.html',
-                    'status':0
-                },
-                {
-                    'navName':'赞助企业',
-                    'link':'mt_enterprise.html',
-                    'status':1
-                },
-                {
-                    'navName':'赞助资讯',
-                    'link':'mt_Consultation.html',
-                    'status':0
-                },
-                {
-                    'navName':'往届回顾',
-                    'link':'mt_past.html',
-                    'status':0
-                },
-                {
-                    'navName':'关于我们',
-                    'link':'mt_about.html',
-                    'status':0
-                }
-            ],
             bottomNav:{
                 copy:'Copyright© 2018: 《SMT China 表面组装技术》',
                 bNav:[
@@ -167,30 +116,25 @@
 
                 ]
             },
-            allCompany:[
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png',
-                'img/mtc1.png'
-            ]
+            listColor:['#cbade0','#90c8c3','#95c6dc','#f4bd45'],
+            listData:[{
+                href:'###',
+                src:'img/previous_img1.png',
+                year:'深圳 2018-3-28',
+                tSrc:'img/city01.png'
+            },{
+                href:'###',
+                src:'img/previous_img1.png',
+                year:'重庆 2018-3-28',
+                tSrc:'img/city02.png'
+            },{
+                href:'###',
+                src:'img/previous_img1.png',
+                year:'惠州 2018-3-28',
+                tSrc:'img/city03.png'
+            }]
+
+
         }
     });
 </script>
