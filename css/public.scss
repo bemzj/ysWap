@@ -135,3 +135,115 @@ $black:#333333;
     }
   }
 }
+.footer{
+  width: 100%;
+  background-color: #262626;
+  padding: 0.01rem;
+  .l6-wrap1{
+    width: 100%;
+    padding: 0.9rem 0 0.6rem 0;
+    img{
+      width: 50%;
+      margin: auto;
+    }
+  }
+  .l6-wrap2{
+    display: flex;
+    display: -webkit-flex;
+    padding: 0 0.35rem 0.5rem 0.35rem;
+    border-bottom: 1px solid #3c3c3c;
+    .name{
+      width: 40%;
+      font-size: 0.32rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .info{
+      width: 60%;
+      font-size: 0.34rem;
+      color: rgba(255,255,255,0.7);
+      >div:nth-child(2){
+        margin-top: 0.15rem;
+      }
+    }
+  }
+  .l6-wrap3{
+    padding: 0.45rem 0.28rem;
+    border-bottom: 1px solid #3c3c3c;
+    >div{
+      margin-bottom: 0.8rem;
+      .cont-title{
+        font-size: 0.32rem;
+        color: #f3f3f3;
+        padding-bottom: 0.4rem;
+        display: flex;
+        align-items: center;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        span{
+          width: 0.25rem;
+          height: 0.31rem;
+          background: url("../img/icon01.png") no-repeat center;
+          background-size: 100% auto;
+          padding: 0.1rem 0;
+          margin-right: 0.15rem;
+          position: relative;
+        }
+        span::after{
+          content: '';
+          display: block;
+          border-bottom: 2px solid #95c6dc;
+          position: absolute;
+          bottom: -0.2rem;
+          left: 0;
+          width: 200%;
+        }
+      }
+      .cont-info{
+        font-size: 0.3rem;
+        color: rgba(255,255,255,0.7);
+        display: flex;
+        align-content: center;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        margin-bottom: 0.3rem;
+        >span:first-child{
+          min-width: 0.93rem;
+        }
+        >span:nth-child(2){
+          width: 85%;
+        }
+      }
+    }
+    >div:last-child{
+      margin-bottom:0;
+    }
+  }
+  .l6-wrap4{
+    font-size: 0.3rem;
+    color: rgba(255,255,255,0.2);
+    padding: 0.45rem 0.4rem;
+    border-bottom: 1px solid #3c3c3c;
+    >div:nth-child(1){
+      margin-bottom: 0.2rem;
+    }
+    >div{
+      display: flex;
+      display: -webkit-flex;
+      >span:nth-child(1){
+        min-width: 0.93rem;
+      }
+      >span:nth-child(2){
+        width: 85%;
+      }
+    }
+  }
+  .l6-wrap5{
+    font-size: 0.22rem;
+    color: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    padding: 0.3rem 0;
+  }
+}
