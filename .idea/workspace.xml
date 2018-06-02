@@ -2,54 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50b8d599-dec0-4027-b590-74985c1ee282" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/mt_index.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/css/swiper-3.4.2.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/mass.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/more.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/mt_agenda.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/mt_img1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/mt_img2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/mt_index_address.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/mt_index_banner.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/mt_index_banner_on.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/mtc1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/mtc2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/person.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/readMore.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/sponsor.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/support.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/public.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/swiper-3.4.2.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mt_Consultation.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mt_about.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mt_agenda.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mt_enterprise.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mt_follow.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mt_news.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mt_past.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mt_registration.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mt_speaker.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/mymt_index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/new_details.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/css/asd.scss" afterPath="$PROJECT_DIR$/css/mt_agenda.scss" />
-      <change beforePath="$PROJECT_DIR$/css/mt_details_3.css" afterPath="$PROJECT_DIR$/css/mymt_details_3.css" />
-      <change beforePath="$PROJECT_DIR$/css/mt_details_3.css.map" afterPath="$PROJECT_DIR$/css/mymt_details_3.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/mt_details_3.scss" afterPath="$PROJECT_DIR$/css/mymt_details_3.scss" />
-      <change beforePath="$PROJECT_DIR$/css/mt_index_login.css" afterPath="$PROJECT_DIR$/css/mymt_index_login.css" />
-      <change beforePath="$PROJECT_DIR$/css/mt_index_login.css.map" afterPath="$PROJECT_DIR$/css/mymt_index_login.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/mt_index_login.scss" afterPath="$PROJECT_DIR$/css/mymt_index_login.scss" />
-      <change beforePath="$PROJECT_DIR$/css/mt_mYmeeting.css" afterPath="$PROJECT_DIR$/css/mymt_mYmeeting.css" />
-      <change beforePath="$PROJECT_DIR$/css/mt_mYmeeting.css.map" afterPath="$PROJECT_DIR$/css/mymt_mYmeeting.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/mt_mYmeeting.scss" afterPath="$PROJECT_DIR$/css/mymt_mYmeeting.scss" />
-      <change beforePath="$PROJECT_DIR$/css/public.css" afterPath="$PROJECT_DIR$/css/public.css" />
-      <change beforePath="$PROJECT_DIR$/css/public.css.map" afterPath="$PROJECT_DIR$/css/public.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/public.scss" afterPath="$PROJECT_DIR$/css/public.scss" />
-      <change beforePath="$PROJECT_DIR$/mt_details.html" afterPath="$PROJECT_DIR$/mymt_details.html" />
-      <change beforePath="$PROJECT_DIR$/mt_erCode.html" afterPath="$PROJECT_DIR$/mymt_erCode.html" />
-      <change beforePath="$PROJECT_DIR$/mt_index.html" afterPath="$PROJECT_DIR$/mt_index.html" />
-      <change beforePath="$PROJECT_DIR$/mt_login.html" afterPath="$PROJECT_DIR$/mymt_login.html" />
-      <change beforePath="$PROJECT_DIR$/mt_mYmeeting.html" afterPath="$PROJECT_DIR$/mymt_mYmeeting.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -76,8 +29,8 @@
       <file leaf-file-name="new_details.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="108" column="27" lean-forward="true" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+            <state relative-caret-position="22">
+              <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -163,7 +116,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="532" />
     <option name="y" value="49" />
     <option name="width" value="1069" />
@@ -187,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,7 +162,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -265,18 +218,18 @@
       <workItem from="1526972200522" duration="11050000" />
       <workItem from="1527124213351" duration="10635000" />
       <workItem from="1527469884275" duration="16000" />
-      <workItem from="1527665103579" duration="21000" />
+      <workItem from="1527665103579" duration="1212000" />
+      <workItem from="1527926360000" duration="9000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73076000" />
+    <option name="totallyTimeSpent" value="74276000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="532" y="49" width="1069" height="994" extended-state="1" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45974782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -678,8 +631,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new_details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="108" column="27" lean-forward="true" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+        <state relative-caret-position="22">
+          <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
           <folding />
         </state>
       </provider>
