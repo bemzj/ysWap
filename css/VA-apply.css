@@ -122,7 +122,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            opacity: 0; }
+            opacity: 0;
+            z-index: 1000; }
         #apply .list4 .l4-wrap .l4wrap-1 ul li .checkboxSel {
           border: 0; }
         #apply .list4 .l4-wrap .l4wrap-1 ul li .checkboxSel::after {
@@ -141,7 +142,8 @@
       border-bottom: 0; }
   #apply .list5 {
     width: 100%;
-    margin-top: 0.5rem; }
+    margin-top: 0.5rem;
+    margin-bottom: 0.9rem; }
     #apply .list5 button {
       display: block;
       width: 90%;
@@ -153,5 +155,8 @@
       -webkit-border-radius: 0.07rem;
       -moz-border-radius: 0.07rem;
       border-radius: 0.07rem; }
+  #apply .list6 {
+    padding: 0.3rem;
+    margin-bottom: 0.2rem; }
 
 /*# sourceMappingURL=VA-apply.css.map */

@@ -672,8 +672,9 @@
     <div class="list5">
         <button>提交</button>
     </div>
+    <!--富文本-->
     <div class="list6">
-        
+        富文本
     </div>
     <div class="footer">
         <div class="l6-wrap1">
@@ -777,14 +778,106 @@
                     'status':0
                 }
             ],
+            richText1:{
+                title:'报名说明',
+                text:[
+                    '1、申报资格：2017年1月1日至2018年2月28日期间发布的发明创造、重大工程的组织与实施或者产品。',
+                    '2、报名截止日期：2018年3月6日（报名表、提交材料和报名费在2018年3月6日前收到，确认报名）。延迟至2017年3月7-13日之间报名及送交材料者，报名费用增加50%。2018年3月14日起，不再接受报名',
+                    '3、任何产品可以要求列入不止一个类别。如果要求列入不止一个类别，应付费用为：USD1000×类别数量。',
+                    '4、每个申报产品随申报表格提供一份不超过500中文字及250英文字的说明（用MSWord文件），一幅3×5″以上高分辨率（300dpi）的产品照片，以及客户意见、专利证书、其他文件（最多共三份, 或可选择不提供，客戶意见书应不超过中文400字及英文200字）。\n' +
+                    '5、可通过电邮提供: VA2018@actintl.com.hk',
+                    '6、由独立的专家评审委员会和一部分读者组成的评审委员会评定。',
+                    '7、八项评审标准：\n' +
+                    '    创新性（入围项目本身设计方面的创造性）\n' +
+                    '    及其对下游产业的帮助和贡献;\n' +
+                    '    降低成本;\n' +
+                    '    提高质量;\n' +
+                    '    增加效率;\n' +
+                    '    增进可靠性;\n' +
+                    '    提升安全性;\n' +
+                    '    节能环保，以及对行业的(8)综合影响力。',
+                    '8、评审结果将在2018年4月底中国上海的Nepcon China 2018期间举行的第十二届远见奖颁奖典礼上公布。',
+                    '9、获奖产品将在NepconChina每日展览快讯 (Nepcon China Show Daily)及《表面组装技术》'
+                ]
+            },
+            richText2:{
+                title:'注意事项',
+                text:[
+                    '1、本公司有权拒绝任何报名，无须提供原因。',
+                    '2、本公司有权删改产品说明文字，文字经处理后返回申报方，由申报方书面确认。'
+                ]
+            },
+            richText3:{
+                title:'申报一个项目的报名费：\n' +
+                '注意: 收到报名费后报名方为生效 !',
+                text:[
+                    '2018年3月6日前: USD1000 / RMB7,500。延迟至2018年3月7-13日之间报名及送交材料者，报名费用增加50%。 (2018年3月14日起，不再接受报名)',
+                    '*入围与不入围的申报产品将于2018年3月27日起一周內获通知。不入围的申报产品将会被保密处理并获退回百分之50的报名费用， 退款需用于《表面组装技术》杂志或网站广告服务并只于2018內有效。'
+                ]
+            },
+            richText4:{
+                title:'付款方式',
+                text:[
+                    '请把报名费电汇到下述银行帐号。\n' +
+                    '请将银行的电汇通知传真或电邮给江琼蓉Rigel Jiang\n' +
+                    '电邮：rigelJ@actintl.com.hk \n' +
+                    '传真：0755-2598 8567',
+                    '*如有关其他缴费方法，请与我们联系。'
+                ]
+            },
+            richText5:{
+                title:'币种款项',
+                text:[
+                    '中国大陆 RMB 7,500 (含发票税)'
+                ]
+            },
+            richText6:{
+                title:'账户信息',
+                text:[
+                    '公司帐户：深圳市雅时信息咨询有限公司 \n' +
+                    '开户银行：招商银行深圳中心城支行\n' +
+                    '银行帐号：4982375210001\n' +
+                    '备注：\n' +
+                    '付款后, 请将付款凭证传真至 : +86-755-25988567'
+                ]
+            },
+            richText7:{
+                title:'Account information',
+                text:[
+                    'Company name: \n' +
+                    'ACT International \n' +
+                    'Bank name: \n' +
+                    'The Bank of East Asia, Ltd. (Wanchai branch) (Tel: +852-2835 3214) \n' +
+                    'Bank address: \n' +
+                    'Shop Nos. A-C, G/F., Easey Commercial Bldg., 253-261 Hennessy Road,HK \n' +
+                    'Bank account:\n' +
+                    '015-521-25-01322-5 USD/HKD saving accoun\n' +
+                    'Remarks：\n' +
+                    'After payment, please send the \n' +
+                    'Bank advice by fax to: \n' +
+                    '+852-28382766'
+                ]
+            }
         },
         methods:{
-            selIt:function () {
-                console.log(1)
+            selIt:function (e) {
+                e.stopPropagation()
+                console.log($(e.target).parent('div').hasClass('checkboxSel'))
+                if($(e.target).parent('div').hasClass('checkboxSel')){
+                    $(e.target).parent('div').removeClass('checkboxSel')
+                }else{
+                    $(e.target).parent('div').addClass('checkboxSel')
+                }
             }
         },
         mounted:function () {
-
+            $('.l4wrap-1>ul>li').click(function () {
+                if($(this).find('.checkbox').hasClass('checkboxSel')){
+                    $(this).find('.checkbox').removeClass('checkboxSel');
+                }else{
+                    $(this).find('.checkbox').addClass('checkboxSel')
+                }
+            })
         }
     })
     //选择省市区
