@@ -1,0 +1,149 @@
+body {
+  background-color: #f2f2f2; }
+
+.main {
+  padding-top: 1.0rem; }
+  .main .index_banner {
+    width: 100%; }
+    .main .index_banner .swiper-slide {
+      position: relative; }
+      .main .index_banner .swiper-slide .bannerIn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 0.2rem 0; }
+        .main .index_banner .swiper-slide .bannerIn p {
+          font-size: 0.36rem;
+          color: white;
+          margin-left: 0.65rem; }
+        .main .index_banner .swiper-slide .bannerIn p:nth-child(1) {
+          font-weight: bold;
+          margin-bottom: 0.05rem; }
+        .main .index_banner .swiper-slide .bannerIn p:nth-child(2) {
+          font-size: 0.16rem;
+          margin-bottom: 0.02rem; }
+    .main .index_banner img {
+      width: 100%; }
+    .main .index_banner .swiper-container-horizontal > .swiper-pagination-bullets, .main .index_banner .swiper-pagination-custom, .main .index_banner .swiper-pagination-fraction {
+      bottom: 0px;
+      width: 20%;
+      right: 0;
+      left: auto; }
+    .main .index_banner .swiper-pagination-bullet {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.3); }
+    .main .index_banner .swiper-pagination-bullet-active {
+      background: white; }
+
+.productCenter {
+  background-color: white;
+  margin-bottom: 0.2rem; }
+  .productCenter .produceTitle {
+    padding: 0.8rem 0; }
+    .productCenter .produceTitle .ptTop {
+      font-size: 0.4rem;
+      color: #333333;
+      font-weight: bold;
+      text-align: center;
+      line-height: 0.6rem;
+      position: relative; }
+      .productCenter .produceTitle .ptTop span {
+        position: relative; }
+      .productCenter .produceTitle .ptTop .prevSpan {
+        position: absolute;
+        height: 0.05rem;
+        top: 50%;
+        margin-top: -0.025rem;
+        left: 110%;
+        width: 150%;
+        overflow: hidden; }
+        .productCenter .produceTitle .ptTop .prevSpan img {
+          height: 0.05rem; }
+      .productCenter .produceTitle .ptTop .nextSpan {
+        left: auto;
+        right: 110%; }
+    .productCenter .produceTitle .ptBottom {
+      font-family: Arial;
+      text-align: center;
+      font-size: 0.24rem;
+      color: #999999;
+      font-weight: lighter;
+      line-height: 0.5rem; }
+  .productCenter .proChild {
+    background-color: #f2f2f2; }
+    .productCenter .proChild .contentBox {
+      position: relative; }
+      .productCenter .proChild .contentBox .pcLeft {
+        width: 50%;
+        min-height: 3.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        -webkit-flex-direction: column; }
+        .productCenter .proChild .contentBox .pcLeft img {
+          width: 60%; }
+      .productCenter .proChild .contentBox .pcrBox {
+        width: 100%; }
+      .productCenter .proChild .contentBox .pcRight {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        right: 4%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        -webkit-flex-direction: column; }
+        .productCenter .proChild .contentBox .pcRight .pcName {
+          font-size: 0.32rem;
+          color: #333333; }
+        .productCenter .proChild .contentBox .pcRight .pcStyle {
+          font-size: 0.24rem;
+          color: rgba(51, 51, 51, 0.7); }
+        .productCenter .proChild .contentBox .pcRight .pcLabel {
+          font-size: 0; }
+          .productCenter .proChild .contentBox .pcRight .pcLabel p {
+            display: inline-block;
+            line-height: 0.4rem;
+            border-radius: 0.04rem;
+            font-size: 0.24rem;
+            color: #ffffff;
+            background-color: #90c8c3;
+            letter-spacing: 1px;
+            padding: 0 0.05rem;
+            margin-right: 0.05rem;
+            margin-top: 0.1rem; }
+          .productCenter .proChild .contentBox .pcRight .pcLabel .pback1 {
+            background-color: #de5d56; }
+          .productCenter .proChild .contentBox .pcRight .pcLabel .pback2 {
+            background-color: #95c6dc; }
+          .productCenter .proChild .contentBox .pcRight .pcLabel .pback3 {
+            background-color: #cbace0; }
+          .productCenter .proChild .contentBox .pcRight .pcLabel .pback4 {
+            background-color: #f5bd46; }
+  .productCenter .proChild:nth-child(2n) {
+    background-color: white; }
+    .productCenter .proChild:nth-child(2n) .pcLeft {
+      margin-left: 50%; }
+    .productCenter .proChild:nth-child(2n) .pcRight {
+      right: auto;
+      left: 4%; }
+  .productCenter .getMore {
+    width: 100%;
+    text-align: center; }
+    .productCenter .getMore a {
+      line-height: 1.0rem;
+      color: #666666;
+      font-size: 0.3rem;
+      border-top: 1px solid #b5b5b5; }
+
+/*# sourceMappingURL=index.css.map */

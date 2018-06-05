@@ -17,6 +17,12 @@
       padding: 0.15rem 0;
     }
   }
+  .navIndex{
+    img{
+      height: 0.98rem;
+      padding: 0.01rem 0;
+    }
+  }
   .returnNav{
     position: absolute;
     top: 0;
@@ -24,8 +30,8 @@
     padding: 0.36rem 0.24rem;
     height: 1.0rem;
     box-sizing: border-box;
-    >img{
-      height: 100%;
+    img{
+      height: 0.28rem;
     }
   }
   .signIn{
@@ -49,8 +55,19 @@
     padding: 0.34rem 0.24rem;
     height: 1.0rem;
     box-sizing: border-box;
-    >img{
-      height: 100%;
+    img{
+      height: 0.32rem;
+    }
+  }
+  .gmNav{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.34rem 0.3rem;
+    height: 1.0rem;
+    box-sizing: border-box;
+    img{
+      height: 0.32rem;
     }
   }
 }
@@ -251,5 +268,53 @@ $black:#333333;
     display: -webkit-flex;
     -webkit-justify-content: center;
     padding: 0.3rem 0;
+  }
+}
+.foot{
+  background-color: #2d2d2d;
+  .ftTop{
+    padding: 0.6rem 0 0.5rem;
+    position: relative;
+    p{
+      font-size: 0.22rem;
+      line-height: 0.42rem;
+      color: rgba(255,255,255,0.4);
+      a{
+        display: inline;
+        color: rgba(255,255,255,0.4);
+      }
+    }
+  }
+  .fttLeft{
+    position: relative;
+    width: 70%;
+    .ftName{
+      margin-bottom: 0.1rem;
+      p{
+        color: white;
+      }
+      p:nth-child(1){
+        font-size: 0.38rem;
+      }
+      p:nth-child(2){
+        font-size: 0.16rem;
+      }
+    }
+  }
+  .fttRight{
+    position: absolute;
+    bottom: 0.61rem;
+    right: 0;
+    width: 26%;
+    img{
+      width: 100%;
+    }
+  }
+  .ftBottom{
+    line-height: 0.8rem;
+    color: rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.2rem;
+    text-align: center;
   }
 }

@@ -25,15 +25,20 @@ body{
     color: white;
   }
 }
+.speakList{
+  padding-bottom: 0.7rem;
+}
 .speakBox{
   width: 100%;
   border-radius: 0.08rem;
   border: 1px solid #d2d2d2;
   box-sizing: border-box;
   overflow: hidden;
+  margin-bottom: 0.2rem;
+  background-color: white;
   .speakTop{
-    padding: 0.72rem 0.45rem;
-    background-color: white;
+    padding: 0.72rem 0.45rem 0.48rem;
+    border-bottom: 1px solid #dcdcdc;
     .stLeft{
       width: 1.74rem;
       height: 1.74rem;
@@ -54,8 +59,8 @@ body{
       }
     }
     .stRight{
-      width: 65%;
-      margin-left: 5%;
+      width: 62%;
+      margin-left: 8%;
       .stName{
         line-height: 0.7rem;
         color: #333333;
@@ -74,6 +79,38 @@ body{
           color: white;
         }
       }
+      .stLogo{
+        width: 100%;
+        .logoImg{
+          width: 49%;
+          img{
+            width: 100%;
+          }
+        }
+        .logoImg:nth-child(2n)
+        {
+          margin-left: 2%;
+        }
+      }
+    }
+  }
+  .speakBottom{
+    padding: 0.45rem 0.45rem 0.05rem;
+    box-sizing: border-box;
+    .speakTitle{
+      font-size: 0.32rem;
+      color: #333333;
+      line-height: 0.6rem;
+      text-align: justify;
+      font-weight: bold;
+    }
+    .speakContent{
+      font-size: 0.28rem;
+      color: #999999;
+      line-height: 0.52rem;
+      letter-spacing: 0.01rem;
+      text-align: justify;
+      margin-bottom: 0.4rem;
     }
   }
 }
