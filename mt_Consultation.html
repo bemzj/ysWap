@@ -9,7 +9,7 @@
 	<meta content="telephone=no" name="format-detection"/>
 	<link rel="stylesheet" href="css/reset.min.css" />
 	<link rel="stylesheet" href="css/public.css"/>
-	<link rel="stylesheet" href="css/mt_index.css">
+	<link rel="stylesheet" href="css/mt_index.css"/>
 	<script>
         (function(doc, win) {
             var docEl = doc.documentElement,
@@ -51,7 +51,19 @@
 				</div>
 			</div>
 		</div>
-
+		<div class="noMoreMessage">
+			<ul>
+				<li class="nmBox">
+					<img src="img/noMoreMessage.png"/>
+				</li>
+				<li>
+					<p>资料更新中</p>
+				</li>
+				<li class="nmText">
+					<p>相关咨询请<a href="###">联系我们&gt;</a></p>
+				</li>
+			</ul>
+		</div>
 		<div class="bottomFoot">
 			<ul>
 				<li>
@@ -73,7 +85,6 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 <script>
     var  app = new Vue({
@@ -144,10 +155,14 @@
                         'navName':'关注我们',
                         'link':'mt_follow.html'
                     }
-
                 ]
             }
-
+        },
+		mounted:function () {
+            setTimeout(function () {
+                var h =$(window).height()-$('.secondNav').height()-$('.main .outSelect').height()-$('.bottomFoot').height();
+                $('.noMoreMessage').height(h);
+            },100);
 
         }
     });

@@ -1,0 +1,118 @@
+.main {
+  padding-top: 1.0rem; }
+
+.banner {
+  width: 100%; }
+  .banner img {
+    width: 100%; }
+
+.introduce {
+  margin-top: 0.4rem; }
+  .introduce .introTitle {
+    font-size: 0.36rem;
+    color: white;
+    line-height: 0.6rem;
+    background-color: #95c6dc; }
+    .introduce .introTitle p {
+      padding: 0 0.12rem; }
+  .introduce .introContent {
+    width: 100%;
+    padding: 0.2rem 0.12rem 1.0rem;
+    box-sizing: border-box;
+    font-size: 0.26rem;
+    line-height: 0.4rem;
+    text-align: justify;
+    color: #999999; }
+    .introduce .introContent p {
+      min-height: 0.4rem; }
+
+.afTitle {
+  font-size: 0.36rem;
+  color: #333333;
+  margin-bottom: 0.3rem; }
+
+.afAddress {
+  width: 100%; }
+  .afAddress P {
+    padding: 0 0.54rem;
+    font-size: 0.3rem;
+    color: white;
+    line-height: 0.6rem;
+    background: url("../img/aboutAddress.png") no-repeat 0.14rem center;
+    background-size: 0.26rem auto;
+    background-color: #90c8c3; }
+
+.afMsgOne .name {
+  color: #333333;
+  font-size: 0.26rem;
+  line-height: 0.3rem;
+  margin: 0.3rem auto 0.1rem; }
+.afMsgOne .phoneBox {
+  font-size: 0.26rem;
+  color: #45acda;
+  line-height: 0.46rem;
+  position: relative; }
+.afMsgOne .pbIn {
+  display: -webkit-box; }
+  .afMsgOne .pbIn p:nth-child(1) {
+    padding-right: 0.5rem; }
+  .afMsgOne .pbIn p:nth-child(2) {
+    padding-left: 0.5rem; }
+.afMsgOne .phoneBox p {
+  position: relative; }
+.afMsgOne .phoneBox p::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid #45acda; }
+.afMsgOne .pbIn::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid #45acda; }
+.afMsgOne .afEmail {
+  color: #666666;
+  font-size: 0.26rem;
+  line-height: 0.46rem; }
+.afMsgOne .afOneTitle {
+  font-size: 0.32rem;
+  line-height: 0.4rem;
+  margin-top: 0.3rem; }
+.afMsgOne .afLine {
+  width: 1.0rem;
+  border-bottom: 1px solid #333333;
+  margin: 0.2rem 0 0.35rem; }
+
+.afBox {
+  margin-bottom: 0.4rem; }
+
+.afMeet {
+  margin-bottom: 0.4rem; }
+  .afMeet .mtTitle {
+    color: #333333;
+    font-size: 0.36rem;
+    line-height: 1.0rem;
+    border-bottom: 1px solid #959595; }
+
+.erCodeBox {
+  width: 1.64rem;
+  text-align: center;
+  font-size: 0.24rem;
+  color: #666666;
+  margin-left: 4%;
+  line-height: 0.6rem;
+  margin-bottom: 0.5rem; }
+  .erCodeBox .imgCode {
+    width: 1.64rem;
+    height: 1.64rem;
+    padding: 0.1rem;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5; }
+    .erCodeBox .imgCode img {
+      width: 100%; }
+
+/*# sourceMappingURL=mt_aboutCompany.css.map */

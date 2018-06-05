@@ -9,7 +9,7 @@
 	<meta content="telephone=no" name="format-detection"/>
 	<link rel="stylesheet" href="css/reset.min.css" />
 	<link rel="stylesheet" href="css/public.css"/>
-	<link rel="stylesheet" href="css/mt_index.css">
+	<link rel="stylesheet" href="css/mt_speaker.css">
 	<script>
         (function(doc, win) {
             var docEl = doc.documentElement,
@@ -51,7 +51,33 @@
 				</div>
 			</div>
 		</div>
+		<div class="speakerSelect contentBox">
+			<div v-for="(items,index) in selectName" :class="{hasSelect:selectIndex==index}">{{items}}</div>
+		</div>
+		<div class="speakList contentBox">
+			<div class="speakBox">
+				<div class="speakTop clearFloat">
+					<div class="stLeft floatl">
+						<img src="img/mt_message.png"/>
+					</div>
+					<div class="stRight floatl">
+						<div class="stName">
+							<p>张雅卿</p>
+						</div>
+						<div class="stLabel clearFloat">
+							<div>华南区电子应用</div>
+							<div>技术经理</div>
+							<div>空气产品公司 air products</div>
+						</div>
+						<div class="stLogo clearFloat">
+							<div>
 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="bottomFoot">
 			<ul>
 				<li>
@@ -146,9 +172,9 @@
                     }
 
                 ]
-            }
-
-
+            },
+			selectName:['主讲','特邀','演讲'],
+            selectIndex:0
         }
     });
 </script>
