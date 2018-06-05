@@ -1,0 +1,70 @@
+.main {
+  padding-top: 1.0rem; }
+
+body {
+  background-color: #f7f7f7; }
+
+.speakerSelect {
+  display: -webkit-box;
+  margin: 0.3rem auto; }
+  .speakerSelect > div {
+    font-size: 0.28rem;
+    color: #333333;
+    width: 32%;
+    margin-right: 2%;
+    text-align: center;
+    background-color: white;
+    line-height: 0.6rem;
+    border-radius: 0.04rem; }
+  .speakerSelect > div:nth-last-child(1) {
+    margin-right: 0%; }
+  .speakerSelect .hasSelect {
+    background-color: #dda430;
+    color: white; }
+
+.speakBox {
+  width: 100%;
+  border-radius: 0.08rem;
+  border: 1px solid #d2d2d2;
+  box-sizing: border-box;
+  overflow: hidden; }
+  .speakBox .speakTop {
+    padding: 0.72rem 0.45rem;
+    background-color: white; }
+    .speakBox .speakTop .stLeft {
+      width: 1.74rem;
+      height: 1.74rem;
+      border-radius: 50%;
+      box-sizing: border-box;
+      border: 0.05rem solid #b5b5b5;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      display: -webkit-flex;
+      -webkit-align-items: center;
+      -webkit-justify-content: center;
+      -webkit-flex-direction: column; }
+      .speakBox .speakTop .stLeft img {
+        width: 100%; }
+    .speakBox .speakTop .stRight {
+      width: 65%;
+      margin-left: 5%; }
+      .speakBox .speakTop .stRight .stName {
+        line-height: 0.7rem;
+        color: #333333;
+        font-size: 0.36rem; }
+      .speakBox .speakTop .stRight .stLabel {
+        font-size: 0.24rem;
+        line-height: 0.4rem; }
+        .speakBox .speakTop .stRight .stLabel > div {
+          float: left;
+          padding: 0 0.1rem;
+          background-color: #95c6dc;
+          border-radius: 0.04rem;
+          margin-bottom: 0.1rem;
+          margin-right: 0.05rem;
+          color: white; }
+
+/*# sourceMappingURL=mt_speaker.css.map */

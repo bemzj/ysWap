@@ -10,6 +10,10 @@
   .secondNav p {
     font-size: 0.36rem;
     text-align: center; }
+    .secondNav p img {
+      height: 0.7rem;
+      margin: 0 auto;
+      padding: 0.15rem 0; }
   .secondNav .returnNav {
     position: absolute;
     top: 0;
@@ -85,7 +89,8 @@
   width: 100%;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
-  font-size: 0.3rem; }
+  font-size: 0.3rem;
+  background-color: white; }
 .main .allSelect {
   width: 100%;
   display: -webkit-box; }

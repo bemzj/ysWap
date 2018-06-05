@@ -9,7 +9,7 @@
 	<meta content="telephone=no" name="format-detection"/>
 	<link rel="stylesheet" href="css/reset.min.css" />
 	<link rel="stylesheet" href="css/public.css"/>
-	<link rel="stylesheet" href="css/mt_index.css">
+	<link rel="stylesheet" href="css/mt_aboutCompany.css">
 	<script>
         (function(doc, win) {
             var docEl = doc.documentElement,
@@ -43,6 +43,7 @@
 				<p>SbSTC.我的会议</p>
 				<a class="personCenter"><img src="img/person.png"/></a>
 			</div>
+
 			<div class="main">
 				<div class="outSelect">
 					<div class="allSelect">
@@ -51,7 +52,110 @@
 						</div>
 					</div>
 				</div>
-
+				<div class="banner">
+					<img src="img/aboutBanner.png"/>
+				</div>
+				<div class="introduce contentBox">
+					<div class="introTitle">
+						<p>{{introduce.title}}</p>
+					</div>
+					<div class="introContent">
+						<p v-for="(item,index) in introduce.content">{{item}}</p>
+					</div>
+				</div>
+				<div class="askFor contentBox">
+					<div class="afTitle">赞助咨询</div>
+					<div class="afBox" v-for="(item,index) in allPhone">
+						<div class="afAddress">
+							<p>{{item.country}}</p>
+						</div>
+						<div class="afMsgOne">
+							<div class="name">
+								<p>{{item.mainPeople.zh_name}} {{item.mainPeople.en_name}}</p>
+							</div>
+							<div class="phoneBoxOut clearFloat">
+								<div class="phoneBox floatl pbIn">
+									<p v-for="(items,i) in item.mainPeople.phone">{{items}}</p>
+								</div>
+							</div>
+							<div class="afEmail">
+								<p>{{item.mainPeople.email}}</p>
+							</div>
+						</div>
+						<div class="afMsgOneBox clearFloat" >
+							<div class="floatl">
+								<div class="afMsgOne" v-for="(it,j) in lcityData[index]"  >
+									<div class="afOneTitle">
+										<p>{{it.cityName}}</p>
+									</div>
+									<div class="afLine"></div>
+									<div v-for="(its,k) in it.cityPeople">
+										<div class="name">
+											<p>{{its.zh_name}} {{its.en_name}}</p>
+										</div>
+										<div class="phoneBoxOut clearFloat">
+											<div class="phoneBox floatl">
+												<p v-for="(itx,y) in its.phone">{{itx}}</p>
+											</div>
+										</div>
+										<div class="afEmail">
+											<p>{{its.email}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="floatr">
+								<div class="afMsgOne" v-for="(it,j) in rcityData[index]"  >
+									<div class="afOneTitle">
+										<p>{{it.cityName}}</p>
+									</div>
+									<div class="afLine"></div>
+									<div v-for="(its,k) in it.cityPeople">
+										<div class="name">
+											<p>{{its.zh_name}} {{its.en_name}}</p>
+										</div>
+										<div class="phoneBoxOut clearFloat">
+											<div class="phoneBox floatl">
+												<p v-for="(itx,y) in its.phone">{{itx}}</p>
+											</div>
+										</div>
+										<div class="afEmail">
+											<p>{{its.email}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="afMeet contentBox">
+					<div class="mtTitle">
+						<p>会议咨询</p>
+					</div>
+					<div class="afMsgOneBox clearFloat" >
+						<div class="afMsgOne" v-for="(its,k) in mtPhone"  :class="{floatl:k%2==0,floatr:k%2==1}">
+							<div>
+								<div class="name">
+									<p>{{its.zh_name}} {{its.en_name}}</p>
+								</div>
+								<div class="phoneBoxOut clearFloat">
+									<div class="phoneBox floatl">
+										<p v-for="(itx,y) in its.phone">{{itx}}</p>
+									</div>
+								</div>
+								<div class="afEmail">
+									<p>{{its.email}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="erCodeBox contentBox">
+					<div class="imgCode">
+						<img :src='erCode'/>
+					</div>
+					<p>扫码关注我们</p>
+				</div>
 				<div class="bottomFoot">
 					<ul>
 						<li>
@@ -79,6 +183,7 @@
 			var  app = new Vue({
 				el:'#main',
 				data: {
+				    erCode:'img/mt_erCode.png',
 					navlink:[
 						{
 							'navName':'首页',
@@ -146,10 +251,194 @@
 							}
 
 						]
+					},
+					introduce:{
+					    title:'关于“一步步新技术研讨会”',
+						content:[
+						    '表面贴装技术（SMT）是电子制造的核心，也是一门成熟的技术，然而，从未停止向前发展，为电子制造业提供新材料、新方法和新工具。同时，电子产品设计日新月异，需要更精密的制造；市场对质量、批量、生产周期的要求不断地提高；而且，由于全球经济动荡，市场不确定因素增加，员工的流动性增大，加上劳工成本上升，很多企业遇到员工队伍频繁变动和人力短缺的问题。',
+							'',
+							'由于这些，表面组装企业在生产管理和技术方面出现了新的需要，提出了新的要求，以便适应市场的变化：需要改进管理，采用新技术，进一步提高自动化水准，最终达到提高生产效率和质量，缩短产品生产周期，降低成本之目的，同时，促进制造业向劳动力和土地成本较低的中西部转移。',
+							'',
+							'在这样的大气候下，ACT International公司针对电子业发展新兴地区的需要，推出“一步步新技术研讨会”（简称SbSTC）。自2012年底开始，分别在合肥、东莞、成都、苏州、武汉、杭州、惠州、南昌、重庆、北京、深圳及郑州地区成功举办多次SbSTC会议，累计参会人数已超过10000人次。',
+							'',
+							'SbSTC的内容，是根据各地区表面组装产业的特点和需要，与上游供应商及技术专家共同精心选题，既力求实用，又顾及技术的前瞻性，并将沿海地区电子制造业几十年成长过程中的技术和管理方面值得借鉴的宝贵经验，介绍给电子制造的新兴领域。2018年我们将向更多城市进发，为行业提供更多技术交流的机会。'
+						]
+					},
+					allPhone:[{
+                        country:'中国区域',
+						mainPeople:{
+							zh_name:'陈燕',
+							en_name:'Sky Chen',
+							phone:[
+								'86-21-62511200',
+								'86-21-62511200'
+							],
+							email:'amberl@actintl.com.hk',
+							cityList:[
+								{
+								    cityName:'上海',
+									cityPeople:[
+									    {
+                                            zh_name:'李歆',
+                                            en_name:'Amber Li',
+                                            phone:[
+                                                '86-21-62511200',
+                                                '13789876625'
+                                            ],
+                                            email:'amberl@actintl.com.hk'
+										},
+                                        {
+                                            zh_name:'马能能',
+                                            en_name:'Amy Ma',
+                                            phone:[
+                                                '86-21-62511200',
+                                                '13789876625'
+                                            ],
+                                            email:'amberl@actintl.com.hk'
+                                        },
+                                        {
+                                            zh_name:'姚丽莹',
+                                            en_name:'Hatter Yao',
+                                            phone:[
+                                                '86-21-62511200',
+                                                '13789876625'
+                                            ],
+                                            email:'amberl@actintl.com.hk'
+                                        },
+                                        {
+                                            zh_name:'朱慧',
+                                            en_name:'Alice Zhu',
+                                            phone:[
+                                                '86-21-62511200',
+                                                '13789876625'
+                                            ],
+                                            email:'amberl@actintl.com.hk'
+                                        }
+									]
+								},
+                                {
+                                    cityName:'北京',
+                                    cityPeople:[
+                                        {
+                                            zh_name:'边团芳',
+                                            en_name:'Cecily Bian',
+                                            phone:[
+                                                '86-21-62511200',
+                                                '13789876625'
+                                            ],
+                                            email:'amberl@actintl.com.hk'
+                                        }
+                                    ]
+                                },
+                                {
+                                    cityName:'武汉',
+                                    cityPeople:[
+                                        {
+                                            zh_name:'边团芳',
+                                            en_name:'Eva Liu',
+                                            phone:[
+                                                '86-21-62511200',
+                                                '13789876625'
+                                            ],
+                                            email:'amberl@actintl.com.hk'
+                                        },
+                                        {
+                                            zh_name:'朱婉婷',
+                                            en_name:'Grace Zhu',
+                                            phone:[
+                                                '86-21-62511200',
+                                                '13789876625'
+                                            ],
+                                            email:'amberl@actintl.com.hk'
+                                        }
+                                    ]
+                                },
+                                {
+                                    cityName:'深圳',
+                                    cityPeople:[
+                                        {
+                                            zh_name:'李文娟',
+                                            en_name:'Jenny Li',
+                                            phone:[
+                                                '86-21-62511200',
+                                                '13789876625'
+                                            ],
+                                            email:'amberl@actintl.com.hk'
+                                        }
+                                    ]
+                                }
+							]
+						}
+					},{
+                        country:'中国香港',
+                        mainPeople: {
+                            zh_name: '麦协和',
+                            en_name: 'Mark Mak (English)',
+                            phone: [
+                                '86-21-62511200',
+                                '13789287630'
+                            ],
+                            email: 'amberl@actintl.com.hk',
+                            cityList: []
+                        }
+					}],
+                    lcityData:[],
+					rcityData:[],
+					mtPhone:[
+                        {
+                            zh_name:'裴雅琴',
+                            en_name:'Kiki Pei',
+                            phone:[
+                                '86-755-25988571'
+                            ],
+                            email:'kikip@actintl.com.hk'
+						},
+                        {
+                            zh_name:'刘英骅',
+                            en_name:'Chris Liu',
+                            phone:[
+                                '86-21-62511200'
+                            ],
+                            email:'Chrisl@actintl.com.hk'
+                        },
+                        {
+                            zh_name:'麦建英',
+                            en_name:'Pauli Mak(English)',
+                            phone:[
+                                '852-28386298',
+								'1378298763'
+                            ],
+                            email:'paulim@actintl.com.hk'
+                        }
+					]
+
+				},
+				mounted:function () {
+					var lth = 0
+					for(var i =0;i<this.allPhone[0].mainPeople.cityList.length;i++)
+					{
+                        lth += this.allPhone[0].mainPeople.cityList[i].cityPeople.length;
 					}
-
-
-				}
+                    var nth = 0;
+					var arr = [];
+                    for(var i =0;i<this.allPhone[0].mainPeople.cityList.length;i++)
+                    {
+                        nth += this.allPhone[0].mainPeople.cityList[i].cityPeople.length;
+                        if(nth>lth/2+1)
+						{
+                            lth=i;
+                            break;
+						};
+                        arr.push(this.allPhone[0].mainPeople.cityList[i]);
+                    }
+                    this.lcityData.push(arr);
+                    var arr = [];
+                    for(var i = lth;i<this.allPhone[0].mainPeople.cityList.length;i++)
+                    {
+                        arr.push(this.allPhone[0].mainPeople.cityList[i]);
+                    }
+                    this.rcityData.push(arr);
+                }
 			});
 		</script>
 		<!--删除不良信息-->

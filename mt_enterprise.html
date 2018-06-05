@@ -51,7 +51,27 @@
 				</div>
 			</div>
 		</div>
-
+		<div class="meetingHelp" style="margin-top: 0.3rem;">
+			<div class="enterpriseTitles">
+				<ul>
+					<li>
+						<img src="img/enterpriseTitles.png" />
+					</li>
+					<li></li>
+					<li>
+						<p>Sponsors</p>
+					</li>
+				</ul>
+			</div>
+			<div class="allHelp clearFloat">
+				<div class="floatl" v-for="(item,index) in allCompany">
+					<img :src="item"/>
+				</div>
+			</div>
+			<div class="supportText">
+				<p>更多赞助，陆续公布……</p>
+			</div>
+		</div>
 		<div class="bottomFoot">
 			<ul>
 				<li>
@@ -146,9 +166,31 @@
                     }
 
                 ]
-            }
-
-
+            },
+            allCompany:[
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png',
+                'img/mtc1.png'
+            ]
         }
     });
 </script>

@@ -11,6 +11,11 @@
   p{
     font-size: 0.36rem;
     text-align: center;
+    img{
+      height: 0.7rem;
+      margin: 0 auto;
+      padding: 0.15rem 0;
+    }
   }
   .returnNav{
     position: absolute;
@@ -109,6 +114,7 @@ $black:#333333;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     font-size: 0.3rem;
+    background-color: white;
   }
   .allSelect{
     width: 100%;
