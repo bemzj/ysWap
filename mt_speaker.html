@@ -52,28 +52,46 @@
 			</div>
 		</div>
 		<div class="speakerSelect contentBox">
-			<div v-for="(items,index) in selectName" :class="{hasSelect:selectIndex==index}">{{items}}</div>
+			<div v-for="(items,index) in selectName" :class="{hasSelect:selectIndex==index}" @click="selectIndex=index">{{items}}</div>
 		</div>
 		<div class="speakList contentBox">
-			<div class="speakBox">
+			<div class="speakBox" v-for="(items,index) in listData[selectIndex]">
 				<div class="speakTop clearFloat">
 					<div class="stLeft floatl">
-						<img src="img/mt_message.png"/>
+						<img :src="items.src==''?'img/mt_circle.png':items.src"/>
 					</div>
 					<div class="stRight floatl">
 						<div class="stName">
-							<p>张雅卿</p>
+							<p>{{items.name}}</p>
 						</div>
-						<div class="stLabel clearFloat">
-							<div>华南区电子应用</div>
-							<div>技术经理</div>
-							<div>空气产品公司 air products</div>
+						<div class="stLabel clearFloat" >
+							<div v-for="(its,idx) in items.label" :style="{backgroundColor: colorList[idx]}">{{its}}</div>
 						</div>
 						<div class="stLogo clearFloat">
-							<div>
-
+							<div class="logoImg">
+								<img src="img/perLogo.png"/>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="speakBottom">
+					<div class="speakTitle">
+						<p>{{items.title}}</p>
+					</div>
+					<div class="speakContent">
+						<p>{{items.titleDetails}}</p>
+					</div>
+					<div class="speakTitle">
+						<p>讲师简介</p>
+					</div>
+					<div class="speakContent">
+						<p>{{items.personDetails}}</p>
+					</div>
+					<div class="speakTitle">
+						<p>公司介绍</p>
+					</div>
+					<div class="speakContent">
+						<p>{{items.company}}</p>
 					</div>
 				</div>
 			</div>
@@ -174,7 +192,72 @@
                 ]
             },
 			selectName:['主讲','特邀','演讲'],
-            selectIndex:0
+            selectIndex:0,
+			colorList:['#95c6dc','#90c8c3','#cbade0'],
+			listData:[
+				[
+					{
+					    src:"",
+					    name:'张雅卿1',
+						label:['华南区电子应用','技术经理','空气产品公司 air products'],
+						logoList:['img/perLogo.png'],
+						title:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+						titleDetails:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+						personDetails:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。',
+						company:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。'
+					},
+                    {
+                        src:"",
+                        name:'张雅卿2',
+                        label:['华南区电子应用','技术经理','空气产品公司 air products'],
+                        logoList:['img/perLogo.png'],
+                        title:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                        titleDetails:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                        personDetails:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。',
+                        company:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。'
+                    }
+				],
+				[{
+                    src:"",
+                    name:'张雅卿3',
+                    label:['华南区电子应用','技术经理','空气产品公司 air products'],
+                    logoList:['img/perLogo.png'],
+                    title:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                    titleDetails:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                    personDetails:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。',
+                    company:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。'
+                },
+                    {
+                        src:"",
+                        name:'张雅卿4',
+                        label:['华南区电子应用','技术经理','空气产品公司 air products'],
+                        logoList:['img/perLogo.png'],
+                        title:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                        titleDetails:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                        personDetails:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。',
+                        company:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。'
+                    }],
+				[{
+                    src:"",
+                    name:'张雅卿5',
+                    label:['华南区电子应用','技术经理','空气产品公司 air products'],
+                    logoList:['img/perLogo.png'],
+                    title:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                    titleDetails:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                    personDetails:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。',
+                    company:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。'
+                },
+                    {
+                        src:"",
+                        name:'张雅卿6',
+                        label:['华南区电子应用','技术经理','空气产品公司 air products'],
+                        logoList:['img/perLogo.png'],
+                        title:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                        titleDetails:'先进的气体应用技术nitrofas助您实现高可靠和低成本的焊接工艺',
+                        personDetails:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。',
+                        company:'作为全球领先的工业气体公司，空气产品公司在电子封装和组装行业有着30多年的丰富经验，并始终致力于为电子行业客户提供整体应用解决方案。'
+                    }]
+			]
         }
     });
 </script>

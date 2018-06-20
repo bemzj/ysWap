@@ -22,15 +22,20 @@ body {
     background-color: #dda430;
     color: white; }
 
+.speakList {
+  padding-bottom: 0.7rem; }
+
 .speakBox {
   width: 100%;
   border-radius: 0.08rem;
   border: 1px solid #d2d2d2;
   box-sizing: border-box;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 0.2rem;
+  background-color: white; }
   .speakBox .speakTop {
-    padding: 0.72rem 0.45rem;
-    background-color: white; }
+    padding: 0.72rem 0.45rem 0.48rem;
+    border-bottom: 1px solid #dcdcdc; }
     .speakBox .speakTop .stLeft {
       width: 1.74rem;
       height: 1.74rem;
@@ -49,8 +54,8 @@ body {
       .speakBox .speakTop .stLeft img {
         width: 100%; }
     .speakBox .speakTop .stRight {
-      width: 65%;
-      margin-left: 5%; }
+      width: 62%;
+      margin-left: 8%; }
       .speakBox .speakTop .stRight .stName {
         line-height: 0.7rem;
         color: #333333;
@@ -66,5 +71,29 @@ body {
           margin-bottom: 0.1rem;
           margin-right: 0.05rem;
           color: white; }
+      .speakBox .speakTop .stRight .stLogo {
+        width: 100%; }
+        .speakBox .speakTop .stRight .stLogo .logoImg {
+          width: 49%; }
+          .speakBox .speakTop .stRight .stLogo .logoImg img {
+            width: 100%; }
+        .speakBox .speakTop .stRight .stLogo .logoImg:nth-child(2n) {
+          margin-left: 2%; }
+  .speakBox .speakBottom {
+    padding: 0.45rem 0.45rem 0.05rem;
+    box-sizing: border-box; }
+    .speakBox .speakBottom .speakTitle {
+      font-size: 0.32rem;
+      color: #333333;
+      line-height: 0.6rem;
+      text-align: justify;
+      font-weight: bold; }
+    .speakBox .speakBottom .speakContent {
+      font-size: 0.28rem;
+      color: #999999;
+      line-height: 0.52rem;
+      letter-spacing: 0.01rem;
+      text-align: justify;
+      margin-bottom: 0.4rem; }
 
 /*# sourceMappingURL=mt_speaker.css.map */

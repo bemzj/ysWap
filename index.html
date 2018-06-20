@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+		<meta content="telephone=no" name="format-detection"/>
+        <link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" href="css/reset.min.css" />
+		<link rel="stylesheet" href="css/public.css"/>
+		<link rel="stylesheet" href="css/index.css">
+		<script>
+            (function(doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function() {
+                        var clientWidth = docEl.clientWidth;
+                        if(!clientWidth) return;
+                        if(clientWidth >= 750) {
+                            docEl.style.fontSize = '100px';
+                        } else {
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+                if(!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+		</script>
+        <script src="js/swiper-3.4.2.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+		<script src="js/public.js"></script>
+	</head>
+	<body>
+		<!--删除不良信息-->
+		<div class="delete1" hidden="hidden"></div>
+		<div id="main">
+			<!--导航-->
+			<div class="secondNav">
+				<p class="navIndex"><img src="img/index_logo.png"/></p>
+                <a class="gmNav"><img src="img/index_more.png"/></a>
+			</div>
+			<div class="main">
+                <!--轮播图-->
+                <div class="index_banner">
+                    <div class="swiper-container swiper-container-index">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" v-for="(items,index) in banner">
+                                <img :src="items.src"/>
+                                <div class="bannerIn">
+                                    <p>{{items.zh_title}}</p>
+                                    <p>{{items.en_title}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <!--产品中心-->
+                <div class="productCenter">
+                    <div class="produceTitle">
+                        <div class="ptTop">
+                            <span>
+                                <div class="prevSpan">
+                                    <img src="img/index_title.png"/>
+                                </div>
+                                产品中心
+                                <div class="prevSpan nextSpan">
+                                    <img src="img/index_title.png"/>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="ptBottom">
+                            <p>PRODUCT CENTER</p>
+                        </div>
+                    </div>
+                    <div class="proList">
+                        <div class="proChild" v-for="(items,index) in products">
+                            <div class="contentBox">
+                                <div class="pcLeft">
+                                    <img :src="items.src"/>
+                                </div>
+                                <div class="pcRight">
+                                    <div class="pcrBox">
+                                        <div class="pcName">
+                                            <p>{{items.name}}</p>
+                                        </div>
+                                        <div class="pcStyle">
+                                            <p>{{items.type}}</p>
+                                        </div>
+                                        <div class="pcLabel">
+                                            <p v-for="(its,i) in items.label" :class="{pback1:index==0&&i%2==1,pback2:index==1&&i%2==1,pback3:index==2&&i%2==1,pback4:index==3&&i%2==1}">{{its}}</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="getMore">
+                        <a href="###">查看更多</a>
+                    </div>
+                </div>
+			</div>
+            <!--底部-->
+            <div class="foot">
+                <div class="ftTop contentBox">
+                    <div class="fttLeft">
+                        <ul>
+                            <li class="ftName">
+                                <p>{{bottomNav.zh_title}}</p>
+                                <p>{{bottomNav.en_title}}</p>
+                            </li>
+                            <li>
+                                <p>电话：<a :href="'tel:'+bottomNav.phone">{{bottomNav.phone}}</a></p>
+                            </li>
+                            <li>
+                                <p>邮箱：{{bottomNav.email}}</p>
+                            </li>
+                            <li>
+                                <p>总部：{{bottomNav.address}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fttRight">
+                        <img :src="bottomNav.erCode" />
+                    </div>
+                </div>
+                <div class="ftBottom">
+                    <p>{{bottomNav.copy}}</p>
+                </div>
+            </div>
+		</div>
+		<script>
+            var  app = new Vue({
+                el:'#main',
+                data: {
+                    banner:[
+                        {
+                            src:'img/index_banner.png',
+                            zh_title:'一步步新技术研讨会',
+                            en_title:'Step-by-Step Technical Conference'
+                        },
+                        {
+                            src:'img/index_banner.png',
+                            zh_title:'一步步新技术研讨会',
+                            en_title:'Step-by-Step Technical Conference'
+                        },
+                        {
+                            src:'img/index_banner.png',
+                            zh_title:'一步步新技术研讨会',
+                            en_title:'Step-by-Step Technical Conference'
+                        }
+                    ],
+                    products:[
+                        {
+                            src:'img/index_pro1.jpg',
+                            name:'PCB吸板机',
+                            type:'VSVL-80 PCB',
+                            label:['Esamber','产前准备']
+                        },
+                        {
+                            src:'img/index_pro1.jpg',
+                            name:'PCB吸板机',
+                            type:'VSVL-80 PCB',
+                            label:['Esamber','产前准备']
+                        },
+                        {
+                            src:'img/index_pro1.jpg',
+                            name:'PCB吸板机',
+                            type:'VSVL-80 PCB',
+                            label:['Esamber','产前准备']
+                        },
+                        {
+                            src:'img/index_pro1.jpg',
+                            name:'PCB吸板机',
+                            type:'VSVL-80 PCB',
+                            label:['Esamber','产前准备']
+                        }
+                    ],
+                    bottomNav:{
+                        zh_title:'一步步新技术研讨会',
+                        en_title:'Step-by-Step Technical Conference',
+                        phone:'86-27-5923 3884',
+                        email:'sbstc@163.com',
+                        address:'深圳市福田区彩田路彩虹新都海鹰大厦22d',
+                        erCode:'img/mt_erCode.png',
+                        copy:'Copyright© 2018: 《SMT China 表面组装技术》; All Rights Reserved.',
+                    }
+                },
+                mounted:function () {
+                    //实例化轮播图
+                    var mySwiper = new Swiper('.swiper-container-index', {
+                        speed:1000,
+                        autoplayDisableOnInteraction : false,
+                        loop:true,
+                        pagination:'.swiper-pagination',
+                        paginationClickable:true
+                    });
+                }
+            });
+		</script>
+		<!--删除不良信息-->
+		<div class="delete2" hidden="hidden"></div>
+	</body>
+</html>
