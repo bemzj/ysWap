@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>产品详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+    <link rel="stylesheet" href="css/reset.min.css" />
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/productDetail.css">
+    <style>
+        .fade-enter-active {
+            transition: all 0.2s ease;
+        }
+        .fade-leave-active {
+            transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .fade-enter, .fade-leave-to{
+            transform: translateY(-1rem);
+            opacity: 0;
+        }
+    </style>
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if(!clientWidth) return;
+                    if(clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+<!--删除不良信息-->
+<div class="delete1" hidden="hidden"></div>
+<div id="main">
+    <!--导航-->
+    <transition name="fade">
+        <div class="navBar" v-if="barShow">
+            <span class="span-1">产品详情</span>
+            <span class="return" ></span>
+        </div>
+    </transition>
+    <!--<div class="secondNav">-->
+    <!--<p class="navIndex"><img src="img/index_logo.png"/></p>-->
+    <!--<a class="gmNav" @click="navTo"><img src="img/index_more.png"/></a>-->
+    <!--</div>-->
+    <div class="main">
+        <!---->
+    </div>
+    <!--底部-->
+    <div class="foot" @click="barShow = !barShow">
+        <div class="ftTop contentBox">
+            <div class="fttLeft">
+                <ul>
+                    <li class="ftName">
+                        <p>{{bottomNav.zh_title}}</p>
+                        <p>{{bottomNav.en_title}}</p>
+                    </li>
+                    <li>
+                        <p>电话：<a :href="'tel:'+bottomNav.phone">{{bottomNav.phone}}</a></p>
+                    </li>
+                    <li>
+                        <p>邮箱：{{bottomNav.email}}</p>
+                    </li>
+                    <li>
+                        <p>总部：{{bottomNav.address}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="fttRight">
+                <img :src="bottomNav.erCode" />
+            </div>
+        </div>
+        <div class="ftBottom">
+            <p>{{bottomNav.copy}}</p>
+        </div>
+    </div>
+</div>
+<script>
+    var  app = new Vue({
+        el:'#main',
+        data: {
+            barShow:true,
+            bottomNav:{
+                zh_title:'一步步新技术研讨会',
+                en_title:'Step-by-Step Technical Conference',
+                phone:'86-27-5923 3884',
+                email:'sbstc@163.com',
+                address:'深圳市福田区彩田路彩虹新都海鹰大厦22d',
+                erCode:'img/mt_erCode.png',
+                copy:'Copyright© 2018: 《SMT China 表面组装技术》; All Rights Reserved.',
+            }
+        },
+        methods:{
+
+        },
+        mounted:function () {
+            const that = this;
+
+        }
+    });
+</script>
+<!--删除不良信息-->
+<div class="delete2" hidden="hidden"></div>
+</body>
+</html>

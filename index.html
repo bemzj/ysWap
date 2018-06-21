@@ -11,6 +11,18 @@
 		<link rel="stylesheet" href="css/reset.min.css" />
 		<link rel="stylesheet" href="css/public.css"/>
 		<link rel="stylesheet" href="css/index.css">
+        <style>
+            .fade-enter-active {
+                transition: all 0.2s ease;
+            }
+            .fade-leave-active {
+                transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+            }
+            .fade-enter, .fade-leave-to{
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        </style>
 		<script>
             (function(doc, win) {
                 var docEl = doc.documentElement,
@@ -39,10 +51,30 @@
 		<!--删除不良信息-->
 		<div class="delete1" hidden="hidden"></div>
 		<div id="main">
+            <!--弹窗-->
+            <transition name="fade">
+                <div class="navList01" v-if="navShow">
+                    <div>
+                        <div class="list_1">
+                            <div class="navLogo">
+                                <img src="img/logo01.png" alt="">
+                            </div>
+                            <div class="navClose" @click="navShow = false"></div>
+                        </div>
+                        <ul>
+                            <li v-for="(item,index) in navList" :key="index">
+                                <a :href="item.src">
+                                    <span>{{item.text}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </transition>
 			<!--导航-->
 			<div class="secondNav">
 				<p class="navIndex"><img src="img/index_logo.png"/></p>
-                <a class="gmNav"><img src="img/index_more.png"/></a>
+                <a class="gmNav" @click="navTo"><img src="img/index_more.png"/></a>
 			</div>
 			<div class="main">
                 <!--轮播图-->
@@ -105,6 +137,212 @@
                         <a href="###">查看更多</a>
                     </div>
                 </div>
+                <!--关于我们-->
+                <div class="aboutUs">
+                    <div>
+                        <div class="about-1">关于我们</div>
+                        <div class="about-2">ABOUT US</div>
+                        <div class="about-3">
+                            <div class="a4-title">SMT China 表面组装技术</div>
+                            <p>表面贴装技术（SMT）是电子制造的核心，也是一门成熟的技术，然而，从未停止向前发展，为电子制造业提供新材料、新方法和新工具。同时，电子产品设计日新月异，需要更精密的制造；市场对质量、批量、生产周期的要求不断地提高；市场对质量、批量、生产周期的要求不断地不断地提高；市场对质量、批量、生产周期的要求不断地市场对质量、批量、生产周期的要求不断提高；而且，由于全球经济动荡...</p>
+                        </div>
+                        <div class="about-4">
+                            <div>
+                                <span class="icon01"></span><span>查看详情</span>
+                            </div>
+                            <div>
+                                <span class="icon01 icon02"></span><span>联系我们</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--sbstc会议-->
+                <div class="meeting listWrap-1">
+                    <div class="m-title">
+                        <div class="title-1">SbSTC会议</div>
+                        <div class="title-2 orange"></div>
+                        <div class="title-3">SbSTC MEETING</div>
+                    </div>
+                    <div class="m-cont1">
+                        <p>SbSTC的内容，是根据各地区表面组装产业的特点和需要，与上游供应商及技术专家共同精心选题，既力求实用，又顾及技术的前瞻性...</p>
+                    </div>
+                    <div class="swiper-container swiper01">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slide1">
+                                    <div class="city">
+                                        <img src="img/icon06.png" alt="">
+                                        <span>深圳</span>
+                                    </div>
+                                    <div class="img">
+                                        <img src="img/img07.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="slide2">
+                                    <div>
+                                        <div class="slide2-title">SbSTC深圳2018会议</div>
+                                        <div class="slide2-1">深圳圣淘沙酒店翡翠店</div>
+                                        <div class="slide2-2">时间：2018-03-29</div>
+                                        <div class="slide2-3">地址：深圳市南山区金鸡路1号翡翠明珠花园</div>
+                                        <div class="slide2-4">电话：<span>0755-26390888</span></div>
+                                        <div class="button">
+                                            <span class="icon01"></span><span>查看详情</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slide1">
+                                    <div class="city">
+                                        <img src="img/icon06.png" alt="">
+                                        <span>深圳</span>
+                                    </div>
+                                    <img src="img/img07.png" alt="">
+                                </div>
+                                <div class="slide2">
+                                    <div>
+                                        <div class="slide2-title">SbSTC深圳2018会议</div>
+                                        <div class="slide2-1">深圳圣淘沙酒店翡翠店</div>
+                                        <div class="slide2-2">时间：2018-03-29</div>
+                                        <div class="slide2-3">地址：深圳市南山区金鸡路1号翡翠明珠花园</div>
+                                        <div class="slide2-4">电话：<span>0755-26390888</span></div>
+                                        <div class="button">
+                                            <span class="icon01"></span><span>查看详情</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--资讯中心-->
+                <div class="reference listWrap-1">
+                    <div class="m-title">
+                        <div class="title-1">资讯中心</div>
+                        <div class="title-2 purple"></div>
+                        <div class="title-3">INFORMATION CENTER</div>
+                    </div>
+                    <div class="swiper-container swiper02">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide sel">
+                                <a href="###">
+                                    <span>市场动态</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="###">
+                                    <span>产品分析</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="###">
+                                    <span>行业活动</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="###">
+                                    <span>研究报告</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contList">
+                        <ul>
+                            <li class="bigLi">
+                                <div class="bigImg">
+                                    <img src="img/img08.png" alt="">
+                                </div>
+                                <div>
+                                    <div class="date">
+                                        <span class="span01 blue">表面组装技术</span><span>03-09 2018</span>
+                                    </div>
+                                    <div class="listTitle">
+                                        <p>带您去德国探寻电子生产制带</p>
+                                    </div>
+                                    <div class="listCont">
+                                        <p>表面贴装技术（SMT）是电子制造的核心，也是一门成熟的技术，然而，从未停止向前发展，为电子制造......</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="smallLi">
+                                <div class="smallLi-left">
+                                    <div class="listTitle">
+                                        <p>带您去德国探寻电子生产制带带您去德国探寻</p>
+                                    </div>
+                                    <div class="date">
+                                        <span class="span01 green">表面组装技术</span><span>03-09 2018</span>
+                                    </div>
+                                </div>
+                                <div class="smallLi-right">
+                                    <div class="smallImg">
+                                        <img src="img/img09.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="smallLi">
+                                <div class="smallLi-left">
+                                    <div class="listTitle">
+                                        <p>带您去德国探寻电子生产制带带您去德国探寻</p>
+                                    </div>
+                                    <div class="date">
+                                        <span class="span01 yellow">表面组装技术</span><span>03-09 2018</span>
+                                    </div>
+                                </div>
+                                <div class="smallLi-right">
+                                    <div class="smallImg">
+                                        <img src="img/img09.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="smallLi">
+                                <div class="smallLi-left">
+                                    <div class="listTitle">
+                                        <p>带您去德国探寻电子生产制带带您去德国探寻</p>
+                                    </div>
+                                    <div class="date">
+                                        <span class="span01 purple">表面组装技术</span><span>03-09 2018</span>
+                                    </div>
+                                </div>
+                                <div class="smallLi-right">
+                                    <div class="smallImg">
+                                        <img src="img/img09.png" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <!--<li class="smallLi"></li>-->
+                            <!--<li class="smallLi"></li>-->
+                        </ul>
+                    </div>
+                    <div class="more">
+                        <a href="###">
+                            <span>查看更多>></span>
+                        </a>
+                    </div>
+                </div>
+                <!--sbstc战略合作商-->
+                <div class="collaborate listWrap-1">
+                    <div class="m-title">
+                        <div class="title-1">SbSTC战略合作商</div>
+                        <div class="title-2 blue"></div>
+                        <div class="title-3">SBSTC STRATEGIC PARTNERS</div>
+                    </div>
+                    <div class="swiper-container swiper03">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/logo02.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/logo05.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/logo04.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/logo03.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			</div>
             <!--底部-->
             <div class="foot">
@@ -139,6 +377,18 @@
             var  app = new Vue({
                 el:'#main',
                 data: {
+                    navShow:false,//导航栏弹窗
+                    navList:[
+                        {text:'首页',src:'###'},
+                        {text:'sbstc会议',src:'###'},
+                        {text:'va远见奖',src:'###'},
+                        {text:'产品中心',src:'###'},
+                        {text:'资讯中心',src:'###'},
+                        {text:'研究报告',src:'###'},
+                        {text:'白皮书',src:'###'},
+                        {text:'关于我们',src:'###'},
+                        {text:'人才招聘',src:'###'},
+                    ],
                     banner:[
                         {
                             src:'img/index_banner.png',
@@ -192,6 +442,11 @@
                         copy:'Copyright© 2018: 《SMT China 表面组装技术》; All Rights Reserved.',
                     }
                 },
+                methods:{
+                   navTo(){
+                       this.navShow = true;
+                   }
+                },
                 mounted:function () {
                     //实例化轮播图
                     var mySwiper = new Swiper('.swiper-container-index', {
@@ -201,6 +456,21 @@
                         pagination:'.swiper-pagination',
                         paginationClickable:true
                     });
+                    var swiper01 = new Swiper('.swiper01',{
+                        slidesPerView: 1.2,
+                        paginationClickable: true,
+                        spaceBetween:15
+                    });
+                    var swiper02 = new Swiper('.swiper02',{
+                        slidesPerView: 3.5,
+                        paginationClickable: true,
+                        spaceBetween:15
+                    });
+                    var swiper03 = new Swiper('.swiper03',{
+                        slidesPerView: 3.5,
+                        paginationClickable: true,
+                        spaceBetween:15
+                    })
                 }
             });
 		</script>
