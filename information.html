@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>产品中心</title>
+    <title>咨询中心</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta content="yes" name="apple-mobile-web-app-capable"/>
     <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
     <link rel="stylesheet" href="css/reset.min.css" />
     <link rel="stylesheet" href="css/public.css"/>
-    <link rel="stylesheet" href="css/productCenter.css?v=1">
+    <link rel="stylesheet" href="css/information.css">
     <style>
         .fade-enter-active {
             transition: all 0.2s ease;
@@ -54,26 +54,18 @@
     <!--导航-->
     <transition name="fade">
         <div class="navBar" v-if="barShow">
-            <span class="span-1">产品中心</span>
+            <span class="span-1" style="background-color: initial;color: #333333;">资讯中心</span>
             <span class="return" ></span>
         </div>
     </transition>
     <!--<div class="secondNav">-->
-        <!--<p class="navIndex"><img src="img/index_logo.png"/></p>-->
-        <!--<a class="gmNav" @click="navTo"><img src="img/index_more.png"/></a>-->
+    <!--<p class="navIndex"><img src="img/index_logo.png"/></p>-->
+    <!--<a class="gmNav" @click="navTo"><img src="img/index_more.png"/></a>-->
     <!--</div>-->
     <div class="main">
         <!--banner-->
         <div class="banner">
-            <img src="img/banner01.png" alt="">
-        </div>
-        <!--一级导航-->
-        <div class="outSelect">
-            <div class="allSelect">
-                <div v-for="(item,index) in navlink" style="width: initial;padding: 0 0.4rem;">
-                    <a :href="item.link" :class="{hasSelect:item.status==1}">{{item.navName}}</a>
-                </div>
-            </div>
+            <img src="img/banner03.png" alt="">
         </div>
         <!--二级导航-->
         <div class="nav02">
