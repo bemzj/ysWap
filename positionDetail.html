@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>人才招聘</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+    <link rel="stylesheet" href="css/reset.min.css" />
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/positionDetail.css">
+    <style>
+        .fade-enter-active {
+            transition: all 0.2s ease;
+        }
+        .fade-leave-active {
+            transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .fade-enter, .fade-leave-to{
+            transform: translateY(-1rem);
+            opacity: 0;
+        }
+        .navBar{
+            -webkit-box-shadow: 0 1px 10px rgba(159, 159, 159, 0.2);
+            -moz-box-shadow: 0 1px 10px rgba(159, 159, 159, 0.2);
+            box-shadow: 0 1px 10px rgba(159, 159, 159, 0.2);
+        }
+    </style>
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if(!clientWidth) return;
+                    if(clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+<!--删除不良信息-->
+<div class="delete1" hidden="hidden"></div>
+<div id="main">
+    <!--导航-->
+    <transition name="fade">
+        <div class="navBar" v-if="barShow">
+            <span class="span-1" style="background-color: initial;color: #333333;">人才招聘</span>
+            <span class="return" ></span>
+        </div>
+    </transition>
+    <!--<div class="secondNav">-->
+    <!--<p class="navIndex"><img src="img/index_logo.png"/></p>-->
+    <!--<a class="gmNav" @click="navTo"><img src="img/index_more.png"/></a>-->
+    <!--</div>-->
+    <div class="main">
+        <!--职位名称-->
+        <div class="positionName">
+            <div class="name01">{{details.name}}</div>
+            <div class="tags01">
+                <span v-for="(item,index) in details.tags" :key="index" :class="colorClass[index]">{{item}}</span>
+            </div>
+        </div>
+        <!--富文本区-->
+        <div class="cont">
+
+        </div>
+        <!--按钮-->
+        <div class="button02" @click="btn02">
+            <span>职位申请</span>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="foot" @click="barShow = !barShow">
+        <div class="ftTop contentBox">
+            <div class="fttLeft">
+                <ul>
+                    <li class="ftName">
+                        <p>{{bottomNav.zh_title}}</p>
+                        <p>{{bottomNav.en_title}}</p>
+                    </li>
+                    <li>
+                        <p>电话：<a :href="'tel:'+bottomNav.phone">{{bottomNav.phone}}</a></p>
+                    </li>
+                    <li>
+                        <p>邮箱：{{bottomNav.email}}</p>
+                    </li>
+                    <li>
+                        <p>总部：{{bottomNav.address}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="fttRight">
+                <img :src="bottomNav.erCode" />
+            </div>
+        </div>
+        <div class="ftBottom">
+            <p>{{bottomNav.copy}}</p>
+        </div>
+    </div>
+</div>
+<script>
+    var  app = new Vue({
+        el:'#main',
+        data: {
+            barShow:true,
+            bottomNav:{
+                zh_title:'一步步新技术研讨会',
+                en_title:'Step-by-Step Technical Conference',
+                phone:'86-27-5923 3884',
+                email:'sbstc@163.com',
+                address:'深圳市福田区彩田路彩虹新都海鹰大厦22d',
+                erCode:'img/mt_erCode.png',
+                copy:'Copyright© 2018: 《SMT China 表面组装技术》; All Rights Reserved.',
+            },
+            colorClass:['colora1','colora2','colora3','colora4'],
+            details:{
+                name:'客服专员',
+                tags:['深圳 福田区','1-3年','若干','2018-04-21']
+            }
+        },
+        methods:{
+            btn02(){
+                alert(12)
+            }
+        },
+        mounted:function () {
+            const that = this;
+        }
+    });
+</script>
+<!--删除不良信息-->
+<div class="delete2" hidden="hidden"></div>
+</body>
+</html>

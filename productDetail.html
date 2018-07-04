@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>产品详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+    <link rel="stylesheet" href="css/reset.min.css" />
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/productDetail.css">
+    <style>
+        .fade-enter-active {
+            transition: all 0.2s ease;
+        }
+        .fade-leave-active {
+            transition: all 0.2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .fade-enter, .fade-leave-to{
+            transform: translateY(-1rem);
+            opacity: 0;
+        }
+    </style>
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if(!clientWidth) return;
+                    if(clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+<!--删除不良信息-->
+<div class="delete1" hidden="hidden"></div>
+<div id="main">
+    <!--导航-->
+    <transition name="fade">
+        <div class="navBar" v-if="barShow">
+            <span class="span-1">产品详情</span>
+            <span class="return" ></span>
+        </div>
+    </transition>
+    <!--<div class="secondNav">-->
+    <!--<p class="navIndex"><img src="img/index_logo.png"/></p>-->
+    <!--<a class="gmNav" @click="navTo"><img src="img/index_more.png"/></a>-->
+    <!--</div>-->
+    <div class="main">
+        <!--轮播展示-->
+        <div class="swiper-container swiper6">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/img10.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/img10.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/img10.png" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination pagin6"></div>
+        </div>
+        <div class="list2">
+            <div class="s2-top">PCB吸板机 VSVL-80 PCB</div>
+            <div class="s2-bottom">
+                <span class="color1">Esamber</span><span class="color2">产前准备</span>
+            </div>
+        </div>
+        <div class="list3">
+            <div class="l3-1">公司名称：Esamber</div>
+            <div class="l3-2">
+                <img src="img/logo02.png" alt="">
+            </div>
+        </div>
+        <div class="list4">
+            <div class="l4-nav">
+                <div v-for="(item,index) in l4Nav" :key="index" :class="{sel:index == 0}" @click="l4NavBtn(index)">{{item}}</div>
+            </div>
+            <div class="l4-cont" v-if="index1 == 0">
+                <img :src="intro.img" alt="">
+                <p v-for="(item,index) in intro.intros" :key="index">{{item.cont}}</p>
+            </div>
+            <div class="l4-cont1" v-if="index1 == 1">
+                <ul>
+                    <li v-for="(item,index) in standard" :key="index">
+                        <span>{{item.name}}</span><span>{{item.detail}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="list5">
+            <div class="l5-nav">
+                <div class="nav-name">相关产品</div>
+                <div class="nav-button">
+                    <div class="swiper-button-prev prev7"></div>
+                    <div class="swiper-button-next next7"></div>
+                </div>
+            </div>
+            <div class="swiper-container swiper7">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="(item,index) in products" :key="index">
+                        <div class="proList">
+                            <a href="###" style="display: block;">
+                                <div class="list-top">
+                                    <img :src="item.img" alt="">
+                                </div>
+                                <div class="list-bottom">
+                                    <div class="list-title">{{item.name}}</div>
+                                    <div class="list-tag">
+                                        <span class="tag-1 color1" v-for="(item1,index1) in item.tags" :key="index1" :class="{color1:index1 == 0 ,color2:index1>0,color3:(index+1) % 2 == 0&& index1>0}">{{item1}}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="foot" @click="barShow = !barShow">
+        <div class="ftTop contentBox">
+            <div class="fttLeft">
+                <ul>
+                    <li class="ftName">
+                        <p>{{bottomNav.zh_title}}</p>
+                        <p>{{bottomNav.en_title}}</p>
+                    </li>
+                    <li>
+                        <p>电话：<a :href="'tel:'+bottomNav.phone">{{bottomNav.phone}}</a></p>
+                    </li>
+                    <li>
+                        <p>邮箱：{{bottomNav.email}}</p>
+                    </li>
+                    <li>
+                        <p>总部：{{bottomNav.address}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="fttRight">
+                <img :src="bottomNav.erCode" />
+            </div>
+        </div>
+        <div class="ftBottom">
+            <p>{{bottomNav.copy}}</p>
+        </div>
+    </div>
+</div>
+<script>
+    var  app = new Vue({
+        el:'#main',
+        data: {
+            barShow:true,
+            l4Nav:['产品简介','产品规格'],
+            index1:0,
+            bottomNav:{
+                zh_title:'一步步新技术研讨会',
+                en_title:'Step-by-Step Technical Conference',
+                phone:'86-27-5923 3884',
+                email:'sbstc@163.com',
+                address:'深圳市福田区彩田路彩虹新都海鹰大厦22d',
+                erCode:'img/mt_erCode.png',
+                copy:'Copyright© 2018: 《SMT China 表面组装技术》; All Rights Reserved.',
+            },
+            standard:[
+                {name:'型号',detail:'3827389827'},
+                {name:'分类',detail:'stm硬件工具类 产前准备'},
+                {name:'材质',detail:'塑料、铁、钢、其他'},
+                {name:'电源',detail:'usb、电池、蓝牙无线'},
+                {name:'控制',detail:'手机遥控、手动操作'},
+            ],
+            intro:{
+              img:'img/img10.png',
+              intros:[
+                {cont:'新华社东京3月21日电 第二次中日韩教育部长会议21日在日本东京召开。中国教育部部长陈宝生、日本文部科学大臣林芳正、韩国副总理兼教育部长官金相坤出席了会议。会后，三国教育部长共同签署了《第二次中日韩教育部长会议联合公报》。'},
+                {cont:'新华社东京3月21日电 第二次中日韩教育部长会议21日在日本东京召开。中国教育部部长陈宝生、日本文部科学大臣林芳正、韩国副总理兼教育部长官金相坤出席了会议。会后，三国教育部长共同签署了《第二次中日韩教育部长会议联合公报》。'}
+              ]
+            },
+            products:[
+                {
+                    name:'吸板机（vsvl-80-pcb）',
+                    tags:['Esamber','产前准备'],
+                    img:'img/product01.png'
+                },
+                {
+                    name:'吸板机（vsvl-80-pcb）',
+                    tags:['Esamber','产前准备'],
+                    img:'img/product02.png'
+                },
+                {
+                    name:'吸板机（vsvl-80-pcb）',
+                    tags:['Esamber','产前准备'],
+                    img:'img/product03.png'
+                },
+                {
+                    name:'吸板机（vsvl-80-pcb）',
+                    tags:['Esamber','产前准备'],
+                    img:'img/product04.png'
+                },
+                {
+                    name:'吸板机（vsvl-80-pcb）',
+                    tags:['Esamber','产前准备'],
+                    img:'img/product05.png'
+                },
+                {
+                    name:'吸板机（vsvl-80-pcb）',
+                    tags:['Esamber','产前准备'],
+                    img:'img/product06.png'
+                }
+            ]
+        },
+        methods:{
+            l4NavBtn(index){
+                $(event.target).siblings('div').removeClass('sel');
+                $(event.target).addClass('sel');
+                this.index1 = index;
+            }
+        },
+        mounted:function () {
+            const that = this;
+            let swiper6 = new Swiper('.swiper6',{
+                pagination:'.pagin6'
+            });
+            let swiper7 = new Swiper('.swiper7',{
+                slidesPerView: 2,
+                paginationClickable: true,
+                spaceBetween:15,
+                prevButton:'.prev7',
+                nextButton:'.next7'
+            });
+        }
+    });
+</script>
+<!--删除不良信息-->
+<div class="delete2" hidden="hidden"></div>
+</body>
+</html>

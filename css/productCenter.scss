@@ -1,0 +1,108 @@
+.main{
+  margin-top: 1rem;
+  .banner{
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+  .nav02{
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    background-color: #f3f3f3;
+    padding: 0.3rem;
+    >div{
+      width: 32.3%;
+      background-color: #fff;
+      margin-right: 0.1rem;
+      margin-bottom: 0.1rem;
+      line-height: 0.6rem;
+      -webkit-border-radius: 0.07rem;
+      -moz-border-radius: 0.07rem;
+      border-radius: 0.07rem;
+      overflow: hidden;
+      a{
+        display: block;
+        font-size: 0.28rem;
+        color: #333333;
+        text-align: center;
+      }
+    }
+    >div:nth-child(3n){
+      margin-right: 0;
+    }
+    >div.sel{
+      a{
+        background-color: #dda430;
+        color: #ffffff;
+      }
+    }
+  }
+  .product01{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    -webkit-justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    font-size: 0.28rem;
+    padding: 0.6rem 0.25rem;
+    >div{
+      width: 47%;
+      margin-right: 0.2rem;
+
+      img{
+        width: 100%;
+      }
+    }
+    .proList{
+      margin-bottom: 0.5rem;
+      .list-top{
+        width: 3.35rem;
+        height: 3.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        margin-bottom: 0.1rem;
+        img{
+          width: 100%;
+        }
+      }
+      .list-bottom{
+        .list-title{
+          font-size: 0.28rem;
+          color: #666666;
+          margin-bottom: 0.2rem;
+        }
+        .list-tag{
+          font-size: 0.24rem;
+          color: #FFFFFF;
+          span{
+            padding: 0.06rem 0.1rem;
+            margin-right: 0.05rem;
+            -webkit-border-radius: 0.07rem;
+            -moz-border-radius: 0.07rem;
+            border-radius: 0.07rem;
+          }
+          .color1{
+            background-color: #90c8c3;
+          }
+          .color2{
+            background-color: #f5bd46;
+          }
+          .color3{
+            background-color: #de5d56;
+          }
+        }
+      }
+    }
+    .proList:nth-child(2n){
+      margin-right: 0;
+    }
+  }
+}
