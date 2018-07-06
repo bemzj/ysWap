@@ -46,6 +46,83 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
     <script src="js/public.js"></script>
+    <style>
+        .contentChild{
+            width: 100%;
+            padding: 0.24rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+        }
+        .ccRight{
+            margin-left: 65%;
+            font-size: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            display: -webkit-flex;
+            -webkit-align-items: center;
+            -webkit-justify-content: center;
+            -webkit-flex-direction: column;
+            border-radius: 0.08rem;
+            -moz-border-radius: 0.08rem;
+            -ms-border-radius: 0.08rem;
+            -webkit-border-radius: 0.08rem;
+            overflow: hidden;
+        }
+        .ccRight img{
+            width: 100%;
+        }
+        .ccTitle{
+            width: 4rem;
+            position: absolute;
+            top: 0.24rem;
+            left: 0;
+            font-size: 0.32rem;
+            color: #242424;
+            text-align: justify;
+            line-height: 0.5rem;
+        }
+        .ccTimeActhor{
+            position: absolute;
+            left: 0;
+            bottom: 0.24rem;
+            color: #999999;
+            font-size: 0.26rem;
+            font-weight: lighter;
+        }
+        .ccTimeActhor span{
+            margin-right: 0.1rem;
+            color: #999999;
+            line-height: 0.38rem;
+        }
+        .ccTimeActhor span:nth-child(1){
+            display: inline-block;
+            padding: 0 0.15rem;
+            color: white;
+            border-radius: 0.08rem;
+            -moz-border-radius: 0.08rem;
+            -ms-border-radius: 0.08rem;
+            -webkit-border-radius: 0.08rem;
+        }
+        .proBtn{
+            width: 100%;
+            display: block;
+            height: 0.84rem;
+            border-radius: 0.1rem;
+            margin-top: 0.4rem;
+            -moz-border-radius: 0.1rem;
+            -ms-border-radius: 0.1rem;
+            -webkit-border-radius: 0.1rem;
+            color: white;
+            font-size: 0.3rem;
+            text-indent: -0.6rem;
+            background: url("img/up.png") no-repeat 58% center;
+            background-size: 0.22rem;
+            background-color: #dda430;
+
+        }
+    </style>
 </head>
 <body>
 <!--删除不良信息-->
@@ -88,6 +165,22 @@
                     </div>
                 </a>
             </div>
+        </div>
+        <!--产品-->
+        <div class="product01">
+            <a href="details.html" class='contentChild'>
+                <div class='ccRight'>
+                    <img src='img/proMygod.png'>
+                </div>
+                <div class='ccTitle'>
+                    <span>SKP联合闪送，打造购物1小时闪送回家新体验</span>
+                </div>
+                <div class='ccTimeActhor'>
+                    <span style="background-color: red">表面组装技术</span>
+                    <span>0312 2018</span>
+                </div>
+            </a>
+            <button class="proBtn">加载更多</button>
         </div>
     </div>
     <!--底部-->

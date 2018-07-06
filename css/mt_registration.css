@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .main {
   padding-top: 1rem;
   font-size: 0.26rem;
@@ -156,5 +157,75 @@
         margin-bottom: 0; }
     .main .l4-wrap .l4wrap-1:last-child {
       border-bottom: 0; }
+
+.proBtn {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  height: 0.84rem;
+  border-radius: 0.1rem;
+  margin-top: 0.4rem;
+  -moz-border-radius: 0.1rem;
+  -ms-border-radius: 0.1rem;
+  -webkit-border-radius: 0.1rem;
+  color: white;
+  font-size: 0.3rem;
+  background-color: #dda430; }
+
+.tls {
+  font-size: 0.36rem;
+  line-height: 0.36rem;
+  padding: 1.05rem 0 0.25rem 0;
+  border-bottom: 1px solid #dcdcdc; }
+  .tls p {
+    border-left: 2px solid #6e63c3;
+    padding-left: 0.2rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: bold; }
+
+.tls1 {
+  padding-top: 0.6rem; }
+  .tls1 p {
+    border-color: #73c1c2; }
+
+.tltext ul {
+  padding: 0.4rem 0 0; }
+.tltext ul li p {
+  color: #666666;
+  font-size: 0.3rem;
+  text-align: justify;
+  line-height: 0.52rem; }
+  .tltext ul li p span {
+    color: #333333;
+    font-weight: bold; }
+.tltext ul li .tltext1 {
+  padding-left: 0.6rem;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+.tltext ul li .tltext1::before {
+  content: "注：";
+  position: absolute;
+  left: 0;
+  color: #666666;
+  top: 0;
+  line-height: 0.52rem; }
+.tltext .phone a {
+  color: #45acda;
+  font-size: 0.3rem;
+  text-decoration: underline;
+  display: inline-block; }
+
+.tltext1 {
+  margin-bottom: 0.6rem; }
+
+.bodys {
+  width: 90%;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=mt_registration.css.map */

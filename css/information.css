@@ -1,2 +1,84 @@
-.main{margin-top:1rem}.main .banner{width:100%}.main .banner img{width:100%}.main .nav02{display:flex;flex-wrap:wrap;display:-webkit-flex;-webkit-flex-wrap:wrap;background-color:#f3f3f3;padding:0.3rem}.main .nav02>div{width:32.3%;background-color:#fff;margin-right:0.1rem;margin-bottom:0.1rem;line-height:0.6rem;-webkit-border-radius:0.07rem;-moz-border-radius:0.07rem;border-radius:0.07rem;overflow:hidden}.main .nav02>div a{display:block;font-size:0.28rem;color:#333333;text-align:center}.main .nav02>div:nth-child(3n){margin-right:0}.main .nav02>div.sel a{background-color:#dda430;color:#ffffff}.main .product01{display:flex;justify-content:space-around;flex-wrap:wrap;display:-webkit-flex;-webkit-justify-content:space-around;-webkit-flex-wrap:wrap;font-size:0.28rem;padding:0.6rem 0.25rem}.main .product01>div{width:47%;margin-right:0.2rem}.main .product01>div img{width:100%}.main .product01 .proList{margin-bottom:0.5rem}.main .product01 .proList .list-top{width:3.35rem;height:3.7rem;display:flex;justify-content:center;align-items:center;display:-webkit-flex;-webkit-align-items:center;-webkit-justify-content:center;margin-bottom:0.1rem}.main .product01 .proList .list-top img{width:100%}.main .product01 .proList .list-bottom .list-title{font-size:0.28rem;color:#666666;margin-bottom:0.2rem}.main .product01 .proList .list-bottom .list-tag{font-size:0.24rem;color:#FFFFFF}.main .product01 .proList .list-bottom .list-tag span{padding:0.06rem 0.1rem;margin-right:0.05rem;-webkit-border-radius:0.07rem;-moz-border-radius:0.07rem;border-radius:0.07rem}.main .product01 .proList .list-bottom .list-tag .color1{background-color:#90c8c3}.main .product01 .proList .list-bottom .list-tag .color2{background-color:#f5bd46}.main .product01 .proList .list-bottom .list-tag .color3{background-color:#de5d56}.main .product01 .proList:nth-child(2n){margin-right:0}
+.main {
+  margin-top: 1rem; }
+  .main .banner {
+    width: 100%; }
+    .main .banner img {
+      width: 100%; }
+  .main .nav02 {
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    background-color: #f3f3f3;
+    padding: 0.3rem; }
+    .main .nav02 > div {
+      width: 32.3%;
+      background-color: #fff;
+      margin-right: 0.1rem;
+      margin-bottom: 0.1rem;
+      line-height: 0.6rem;
+      -webkit-border-radius: 0.07rem;
+      -moz-border-radius: 0.07rem;
+      border-radius: 0.07rem;
+      overflow: hidden; }
+      .main .nav02 > div a {
+        display: block;
+        font-size: 0.28rem;
+        color: #333333;
+        text-align: center; }
+    .main .nav02 > div:nth-child(3n) {
+      margin-right: 0; }
+    .main .nav02 > div.sel a {
+      background-color: #dda430;
+      color: #ffffff; }
+  .main .product01 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    -webkit-justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    font-size: 0.28rem;
+    padding: 0.6rem 0.25rem; }
+    .main .product01 > div {
+      width: 47%;
+      margin-right: 0.2rem; }
+      .main .product01 > div img {
+        width: 100%; }
+    .main .product01 .proList {
+      margin-bottom: 0.5rem; }
+      .main .product01 .proList .list-top {
+        width: 3.35rem;
+        height: 3.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: -webkit-flex;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        margin-bottom: 0.1rem; }
+        .main .product01 .proList .list-top img {
+          width: 100%; }
+      .main .product01 .proList .list-bottom .list-title {
+        font-size: 0.28rem;
+        color: #666666;
+        margin-bottom: 0.2rem; }
+      .main .product01 .proList .list-bottom .list-tag {
+        font-size: 0.24rem;
+        color: #FFFFFF; }
+        .main .product01 .proList .list-bottom .list-tag span {
+          padding: 0.06rem 0.1rem;
+          margin-right: 0.05rem;
+          -webkit-border-radius: 0.07rem;
+          -moz-border-radius: 0.07rem;
+          border-radius: 0.07rem; }
+        .main .product01 .proList .list-bottom .list-tag .color1 {
+          background-color: #90c8c3; }
+        .main .product01 .proList .list-bottom .list-tag .color2 {
+          background-color: #f5bd46; }
+        .main .product01 .proList .list-bottom .list-tag .color3 {
+          background-color: #de5d56; }
+    .main .product01 .proList:nth-child(2n) {
+      margin-right: 0; }
+
 /*# sourceMappingURL=information.css.map */
