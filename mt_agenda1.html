@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>会议议程</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<link rel="stylesheet" href="css/reset.min.css" />
+	<link rel="stylesheet" href="css/public.css"/>
+	<link rel="stylesheet" href="css/mt_agenda.css">
+	<script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if(!clientWidth) return;
+                    if(clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+	</script>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+	<script src="js/public.js"></script>
+</head>
+<body>
+<!--删除不良信息-->
+<div class="delete1" hidden="hidden"></div>
+<div id="main">
+	<!--导航-->
+	<div class="secondNav">
+		<a class="returnNav"><img src="img/navLeft.png" /></a>
+		<p>SbSTC.我的会议</p>
+		<a class="personCenter"><img src="img/person.png"/></a>
+	</div>
+
+	<div class="main">
+		<div class="outSelect">
+			<div class="allSelect">
+				<div v-for="(item,index) in navlink">
+					<a :href="item.link" :class="{hasSelect:item.status==1}">{{item.navName}}</a>
+				</div>
+			</div>
+		</div>
+		<!--二级导航-->
+		<div class="nav02">
+			<div v-for="(item,index) in navlink01" :class="{sel:item.status == 1}" :key="index">
+				<a :href="item.src" @click="nav02(index)">{{item.navName}}</a>
+			</div>
+		</div>
+		<div class="plan">
+			<div class="msgBanner">
+				<img :src="msg.src" />
+				<div class="msgBox">
+					<p v-for = 'item in msg.bannerP'>{{item}}</p>
+					<span>{{msg.companyName}}{{msg.companyAddress}} {{msg.companyTime}}</span>
+				</div>
+			</div>
+			<div class="time contentBox">
+				<p>{{planTime.time}} {{planTime.address}}</p>
+			</div>
+			<div class="planBox">
+				<div  v-for="(item,index) in all" :style="{'background-color':item.bgColor}">
+					<div class="planTitle" v-if="item.lev==1">
+						<div class="contentBox">
+							<p>{{item.time}} {{item.content}}</p>
+						</div>
+					</div>
+					<div class="planContent" v-else="item.lev==2">
+						<div class="contentBox">
+							<p  class="pTime">{{item.sort}} {{item.time}}</p>
+							<div class="ctt">
+								<p  class="pTitle" v-if="item.title!=''">{{item.title}}</p>
+								<p class="pContent" v-if="item.content!=''">{{item.content}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottomFoot">
+			<ul>
+				<li>
+					<p>Step-by-StepTechnical Conference</p>
+				</li>
+				<li>
+					<p>一步步新技术研讨会</p>
+				</li>
+				<li>
+					<div class="bottomNav clearFloat">
+						<div  v-for="(item,index) in bottomNav.bNav">
+							<a :href="item.link">{{item.navName}}</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="copy">
+				<p>{{bottomNav.copy}}</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+<script>
+    var  app = new Vue({
+        el:'#main',
+        data: {
+            navlink:[
+                {
+                    'navName':'首页',
+                    'link':'mt_index.html',
+                    'status':0
+                },
+                {
+                    'navName':'听众登记',
+                    'link':'mt_registration.html',
+                    'status':0
+                },
+                {
+                    'navName':'演讲嘉宾',
+                    'link':'mt_speaker.html',
+                    'status':0
+                },
+                {
+                    'navName':'会议议程',
+                    'link':'mt_agenda.html',
+                    'status':1
+                },
+                {
+                    'navName':'赞助企业',
+                    'link':'mt_enterprise.html',
+                    'status':0
+                },
+                {
+                    'navName':'赞助资讯',
+                    'link':'mt_Consultation.html',
+                    'status':0
+                },
+                {
+                    'navName':'往届回顾',
+                    'link':'mt_past.html',
+                    'status':0
+                },
+                {
+                    'navName':'关于我们',
+                    'link':'mt_about.html',
+                    'status':0
+                }
+            ],
+            navlink01:[
+                {
+                    navName:'产前准备',
+                    src:'###',
+                    status:1
+                },
+                {
+                    navName:'锡膏印刷',
+                    src:'###',
+                    status:0
+                },
+                {
+                    navName:'贴片',
+                    src:'###',
+                    status:0
+                },
+                {
+                    navName:'插件',
+                    src:'###',
+                    status:0
+                },
+                {
+                    navName:'焊接',
+                    src:'###',
+                    status:0
+                },
+                {
+                    navName:'清洗',
+                    src:'###',
+                    status:0
+                },
+                {
+                    navName:'涂覆',
+                    src:'###',
+                    status:0
+                },
+                {
+                    navName:'监测',
+                    src:'###',
+                    status:0
+                },
+                {
+                    navName:'返修',
+                    src:'###',
+                    status:0
+                },
+                {
+                    navName:'装置',
+                    src:'###',
+                    status:0
+                },
+            ],
+            bottomNav:{
+                copy:'Copyright© 2018: 《SMT China 表面组装技术》',
+                bNav:[
+                    {
+                        'navName':'首页',
+                        'link':'mt_index.html'
+                    },
+                    {
+                        'navName':'听众登记',
+                        'link':'mt_registration.html',
+                    },
+                    {
+                        'navName':'会议资讯',
+                        'link':'mt_news.html',
+                    },
+                    {
+                        'navName':'关于我们',
+                        'link':'mt_about.html',
+                    },
+                    {
+                        'navName':'关注我们',
+                        'link':'mt_follow.html'
+                    }
+
+                ]
+            },
+            planTime:{
+				time:'星期四',
+				address:'深圳圣淘沙酒店翡翠店 四楼 翡翠厅'
+			},
+            msg: {
+                bannerP: ["提高生产力，增强可靠性", "智能制造以及可靠性提升方案"],
+                companyName: 'SbSTC',
+                companyAddress: '深圳',
+                companyTime: '2018/3/29',
+				src:'img/mt_agenda.png'
+            },
+            all: [
+                {
+                    'lev': 1,
+                    'time': '08:00-15:00',
+                    'sort': '',
+                    'title': '',
+                    'content': '听众登记',
+                    'bgColor': '#90c8c3'
+                },
+                {
+                    'lev': 2,
+                    'time': '09:00-09:10',
+                    'sort': 'A01',
+                    'title': '欢迎词',
+                    'content': '麦协林 -《SMT China表面组装技术》杂志社出版总监SMT',
+                    'bgColor': '#ffffff'
+                },
+                {
+                    'lev': 2,
+                    'time': '09:10-09:30',
+                    'sort': 'A02',
+                    'title': '激光条码雕刻系统在SMT智慧生产的应用',
+                    'content': '彭其鸿 - 新迪精密科技有限公司 总经理',
+                    'bgColor': '#f7f7f7'
+                },
+                {
+                    'lev': 2,
+                    'time': '09:30-10:10',
+                    'sort': 'A03',
+                    'title': '选择性波峰焊技术',
+                    'content': '陈伟 - Kurtz Ersa库尔特埃莎亚洲有限公司 总经理',
+                    'bgColor': '#ffffff'
+                },
+                {
+                    'lev': 2,
+                    'time': '10:10-10:45',
+                    'sort': 'A04',
+                    'title': 'IMS与工业4.0（二）',
+                    'content': '李文权 - 广东盘古信息科技股份有限公司 资深智能制造顾问',
+                    'bgColor': '#f7f7f7'
+                },
+                {
+                    'lev': 1,
+                    'time': '10:45-10:55',
+                    'sort': '',
+                    'title': '',
+                    'content': '茶歇及参观展示',
+                    'bgColor': '#95c6dc'
+                },
+                {
+                    'lev': 2,
+                    'time': '10:55-11:20',
+                    'sort': 'A05',
+                    'title': '气体在电子制造中的技术应用',
+                    'content': '余允红 - 液化空气（中国）投资有限公司 亚太区电子产品和元器件应用技术经理',
+                    'bgColor': '#ffffff'
+                },
+                {
+                    'lev': 2,
+                    'time': '11:20-11:45',
+                    'sort': 'A06',
+                    'title': '高速点胶应用概论',
+                    'content': '李勇 - 东莞市安达自动化设备有限公司 市场部经理',
+                    'bgColor': '#f7f7f7'
+                },
+                {
+                    'lev': 2,
+                    'time': '11:45-12:10',
+                    'sort': 'A07',
+                    'title': '品质提升与工艺改善解决方案',
+                    'content': '张滔俊 - 明锐理想科技有限公司 副总经理兼技术总监',
+                    'bgColor': '#ffffff'
+                },
+                {
+                    'lev': 1,
+                    'time': '12:10-13:15',
+                    'sort': '',
+                    'title': '',
+                    'content': '午餐及参观展示',
+                    'bgColor': '#95c6dc'
+                },
+                {
+                    'lev': 2,
+                    'time': '08:00-15:00',
+                    'sort': 'A08',
+                    'title': '有奖提问',
+                    'content': '',
+                    'bgColor': '#f7f7f7'
+                },
+                {
+                    'lev': 2,
+                    'time': '11:20-11:45',
+                    'sort': 'A09',
+                    'title': '细间距高密度PCB印刷工艺优化研究',
+                    'content': '陈勇- 深圳环城自动化设备有限公司 工艺经理',
+                    'bgColor': '#ffffff'
+                },
+                {
+                    'lev': 2,
+                    'time': '13:50-14:15',
+                    'sort': 'A10',
+                    'title': '03015测试及不良管控解决方案',
+                    'content': '吴东 - 思泰克智能科技股份有限公司 服务部经理',
+                    'bgColor': '#f7f7f7'
+                },
+                {
+                    'lev': 2,
+                    'time': '14:15-14:40',
+                    'sort': 'A11',
+                    'title': '分板机需求与发展历程分析',
+                    'content': '郭卫群 - 东莞市智茂自动化设备有限公司 销售总监',
+                    'bgColor': '#ffffff'
+                },
+                {
+                    'lev': 2,
+                    'time': '14:40-15:05',
+                    'sort': 'A12',
+                    'title': '移动互联网+智能制造工厂',
+                    'content': '汪阳名 - 深圳市深科特信息技术有限公司 销售总监',
+                    'bgColor': '#f7f7f7'
+                },
+                {
+                    'lev': 2,
+                    'time': '15:05-15:30',
+                    'sort': 'A13',
+                    'title': '水基清洗技术',
+                    'content': '李爱良 - 中山翰华锡业有限公司 研发技术经理',
+                    'bgColor': '#ffffff'
+                },
+                {
+                    'lev': 2,
+                    'time': '15:30-15:55',
+                    'sort': 'A14',
+                    'title': '先进的气体应用技术NitroFAS®助您实现高可靠和低成本的焊接工艺',
+                    'content': '张雅卿 - Air Products 空气产品公司 华南区电子应用技术经理',
+                    'bgColor': '#f7f7f7'
+                },
+                {
+                    'lev': 2,
+                    'time': '15:55-16:20',
+                    'sort': 'A15',
+                    'title': 'SMT焊接零缺陷的稳健，全面，智能化实现',
+                    'content': '张坤泉 - ESAMBER 中国服务中心 技术服务总监',
+                    'bgColor': '#ffffff'
+                },
+                {
+                    'lev': 1,
+                    'time': '16:20-16:30',
+                    'sort': '',
+                    'title': '',
+                    'content': '茶歇及参观展示',
+                    'bgColor': '#f4bd45'
+                },
+                {
+                    'lev': 2,
+                    'time': '16:30-17:00',
+                    'sort': 'A16',
+                    'title': '片式贴装器件失效机理及对策',
+                    'content': '薛广辉 - SMT China技朮顾问SMTC',
+                    'bgColor': '#f7f7f7'
+                },
+                {
+                    'lev': 2,
+                    'time': '17:00-17:10',
+                    'sort': 'A17',
+                    'title': '幸运抽奖',
+                    'content': '',
+                    'bgColor': '#ffffff'
+                }
+            ]
+
+        },
+        methods:{
+            nav02(index){
+                for(var i = 0; i<this.navlink01.length; i++) {
+                    this.navlink01[i].status = 0;
+                }
+                this.navlink01[index].status = 1;
+            }
+        }
+    });
+</script>
+<!--删除不良信息-->
+<div class="delete2" hidden="hidden"></div>
+</body>
+</html>

@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8c51f85-969a-45a7-818a-371cd9cfc9a4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/img/proMygod.png" />
-      <change beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change beforePath="$PROJECT_DIR$/css/information.css" afterPath="$PROJECT_DIR$/css/information.css" />
-      <change beforePath="$PROJECT_DIR$/css/information.css.map" afterPath="$PROJECT_DIR$/css/information.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/invite.css" afterPath="$PROJECT_DIR$/css/invite.css" />
-      <change beforePath="$PROJECT_DIR$/css/invite.css.map" afterPath="$PROJECT_DIR$/css/invite.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/mt_registration.css" afterPath="$PROJECT_DIR$/css/mt_registration.css" />
-      <change beforePath="$PROJECT_DIR$/css/mt_registration.css.map" afterPath="$PROJECT_DIR$/css/mt_registration.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/mt_registration.scss" afterPath="$PROJECT_DIR$/css/mt_registration.scss" />
-      <change beforePath="$PROJECT_DIR$/css/positionDetail.css" afterPath="$PROJECT_DIR$/css/positionDetail.css" />
-      <change beforePath="$PROJECT_DIR$/css/positionDetail.css.map" afterPath="$PROJECT_DIR$/css/positionDetail.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/productCenter.css" afterPath="$PROJECT_DIR$/css/productCenter.css" />
-      <change beforePath="$PROJECT_DIR$/css/productCenter.css.map" afterPath="$PROJECT_DIR$/css/productCenter.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/productDetail.css" afterPath="$PROJECT_DIR$/css/productDetail.css" />
-      <change beforePath="$PROJECT_DIR$/css/productDetail.css.map" afterPath="$PROJECT_DIR$/css/productDetail.css.map" />
-      <change beforePath="$PROJECT_DIR$/css/reset.min.css" afterPath="$PROJECT_DIR$/css/reset.min.css" />
-      <change beforePath="$PROJECT_DIR$/information.html" afterPath="$PROJECT_DIR$/information.html" />
-      <change beforePath="$PROJECT_DIR$/mt_registration.html" afterPath="$PROJECT_DIR$/mt_registration.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/mt_agenda1.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/css/mt_agenda.css" afterPath="$PROJECT_DIR$/css/mt_agenda.css" />
+      <change beforePath="$PROJECT_DIR$/css/mt_agenda.css.map" afterPath="$PROJECT_DIR$/css/mt_agenda.css.map" />
+      <change beforePath="$PROJECT_DIR$/css/mt_agenda.scss" afterPath="$PROJECT_DIR$/css/mt_agenda.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,32 +18,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="mt_registration.scss" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/css/mt_registration.scss">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="603">
-                    <caret line="286" column="20" lean-forward="false" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="20" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="information.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/information.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
+            <state relative-caret-position="3938">
               <caret line="179" column="34" lean-forward="false" selection-start-line="179" selection-start-column="34" selection-end-line="179" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#2;n#a#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -65,11 +32,93 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mt_registration.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mt_registration.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mt_registration.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="383">
-              <caret line="338" column="28" lean-forward="true" selection-start-line="338" selection-start-column="28" selection-end-line="338" selection-end-column="28" />
+              <caret line="338" column="28" lean-forward="false" selection-start-line="338" selection-start-column="28" selection-end-line="338" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mymt_mYmeeting.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mymt_mYmeeting.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mt_newMeeting.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mt_newMeeting.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mt_enterprise.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mt_enterprise.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mt_agenda.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mt_agenda.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-132">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mt_agenda1.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mt_agenda1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="445">
+              <caret line="59" column="14" lean-forward="false" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+              <folding>
+                <element signature="e#3706#4939#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="productCenter.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/productCenter.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="577">
+              <caret line="41" column="3" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="41" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mt_agenda.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/mt_agenda.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="797">
+              <caret line="119" column="1" lean-forward="false" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="productCenter.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productCenter.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="759">
+              <caret line="236" column="13" lean-forward="false" selection-start-line="185" selection-start-column="12" selection-end-line="236" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -92,6 +141,8 @@
         <option value="$PROJECT_DIR$/css/reset.min.css" />
         <option value="$PROJECT_DIR$/css/mt_registration.scss" />
         <option value="$PROJECT_DIR$/mt_registration.html" />
+        <option value="$PROJECT_DIR$/css/mt_agenda.scss" />
+        <option value="$PROJECT_DIR$/mt_agenda1.html" />
       </list>
     </option>
   </component>
@@ -101,7 +152,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="832" />
     <option name="y" value="23" />
     <option name="width" value="1069" />
@@ -138,8 +189,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -151,6 +202,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\我的代码库\ysWap" />
       <recent name="E:\我的代码库\ysWap\img" />
     </key>
   </component>
@@ -180,18 +232,19 @@
       <option name="presentableId" value="Default" />
       <updated>1530796728148</updated>
       <workItem from="1530796729668" duration="5076000" />
-      <workItem from="1530839274441" duration="1248000" />
+      <workItem from="1530839274441" duration="2481000" />
+      <workItem from="1531211694068" duration="572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6324000" />
+    <option name="totallyTimeSpent" value="8129000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="832" y="23" width="1069" height="994" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13540569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -231,6 +284,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mt_registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7436">
+          <caret line="338" column="28" lean-forward="true" selection-start-line="338" selection-start-column="28" selection-end-line="338" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mt_registration.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/information.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3938">
+          <caret line="179" column="34" lean-forward="false" selection-start-line="179" selection-start-column="34" selection-end-line="179" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#2;n#a#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/mt_registration.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5236">
@@ -256,7 +335,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/information.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="3938">
           <caret line="179" column="34" lean-forward="false" selection-start-line="179" selection-start-column="34" selection-end-line="179" selection-end-column="34" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#2;n#a#0;n#div#3;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -266,7 +345,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/mt_registration.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
+        <state relative-caret-position="628">
           <caret line="286" column="20" lean-forward="false" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="20" />
           <folding />
         </state>
@@ -275,8 +354,74 @@
     <entry file="file://$PROJECT_DIR$/mt_registration.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
-          <caret line="338" column="28" lean-forward="true" selection-start-line="338" selection-start-column="28" selection-end-line="338" selection-end-column="28" />
+          <caret line="338" column="28" lean-forward="false" selection-start-line="338" selection-start-column="28" selection-end-line="338" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mymt_mYmeeting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mt_newMeeting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mt_enterprise.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mt_agenda.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/productCenter.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="41" column="3" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="41" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mt_agenda.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="797">
+          <caret line="119" column="1" lean-forward="false" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productCenter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="236" column="13" lean-forward="false" selection-start-line="185" selection-start-column="12" selection-end-line="236" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mt_agenda1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="59" column="14" lean-forward="false" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+          <folding>
+            <element signature="e#3706#4939#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
