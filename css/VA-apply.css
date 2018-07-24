@@ -106,15 +106,19 @@
         -webkit-align-items: center;
         font-size: 0.26rem;
         color: #666666;
-        margin-bottom: 0.45rem; }
+        margin-bottom: 0.45rem;
+        position: relative; }
         #apply .list4 .l4-wrap .l4wrap-1 ul li .checkbox {
+          position: absolute;
+          left: 0;
+          top: 50%;
           width: 0.3rem;
           height: 0.3rem;
           border: 1px solid #bfbfbf;
           -webkit-border-radius: 0.06rem;
           -moz-border-radius: 0.06rem;
           border-radius: 0.06rem;
-          position: relative;
+          margin-top: -0.15rem;
           margin-right: 0.15rem; }
           #apply .list4 .l4-wrap .l4wrap-1 ul li .checkbox input {
             width: 100%;
@@ -124,6 +128,12 @@
             left: 0;
             opacity: 0;
             z-index: 1000; }
+        #apply .list4 .l4-wrap .l4wrap-1 ul li > div:nth-child(2) {
+          width: 100%;
+          padding-left: 0.5rem;
+          box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          text-align: justify; }
         #apply .list4 .l4-wrap .l4wrap-1 ul li .checkboxSel {
           border: 0; }
         #apply .list4 .l4-wrap .l4wrap-1 ul li .checkboxSel::after {

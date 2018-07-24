@@ -2,14 +2,14 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>往届回顾</title>
+	<title>在线调查</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<meta content="yes" name="apple-mobile-web-app-capable"/>
 	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="telephone=no" name="format-detection"/>
 	<link rel="stylesheet" href="css/reset.min.css" />
 	<link rel="stylesheet" href="css/public.css"/>
-	<link rel="stylesheet" href="css/mt_index.css">
+	<link rel="stylesheet" href="css/online.css">
 	<script>
         (function(doc, win) {
             var docEl = doc.documentElement,
@@ -40,7 +40,7 @@
 	<!--导航-->
 	<div class="secondNav">
 		<a class="returnNav"><img src="img/navLeft.png" /></a>
-		<p>SbSTC.我的会议</p>
+		<p>在线调查</p>
 		<a class="personCenter"><img src="img/person.png"/></a>
 	</div>
 	<div class="main">
@@ -51,27 +51,91 @@
 				</div>
 			</div>
 		</div>
-		<div class="bottomFoot">
-			<ul>
-				<li>
-					<p>Step-by-StepTechnical Conference</p>
-				</li>
-				<li>
-					<p>一步步新技术研讨会</p>
-				</li>
-				<li>
-					<div class="bottomNav clearFloat">
-						<div  v-for="(item,index) in bottomNav.bNav">
-							<a :href="item.link">{{item.navName}}</a>
-						</div>
-					</div>
-				</li>
-			</ul>
-			<div class="copy">
-				<p>{{bottomNav.copy}}</p>
+		<div class="questionBox">
+			<div class="question">
+				<div class="title">
+					<p>1.您参加的会议的次数是？</p>
+				</div>
+				<div class="answerBox moreCheck">
+					<ul>
+						<li>
+							<div class="checkbox checkboxSel">
+								<input type="checkbox" @click="selIt">
+							</div>
+							<div>结交更多朋友</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" @click="selIt">
+							</div>
+							<div>工作需要</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" @click="selIt">
+							</div>
+							<div>学习更多</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" @click="selIt">
+							</div>
+							<div>开展视野</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" @click="selIt">
+							</div>
+							<div>分享乐趣</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" @click="selIt">
+							</div>
+							<div>获得生活信息</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="question">
+				<div class="title">
+					<p>2.您参加的会议的次数是？</p>
+				</div>
+				<div class="answerBox onlyCheck">
+					<ul>
+						<li>
+							<div class="checkbox radioboxSel">
+								<input type="checkbox" @click="setIt">
+							</div>
+							<div>没有参加过</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" @click="setIt">
+							</div>
+							<div>一次</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" @click="setIt">
+							</div>
+							<div>3次以上</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="checkbox" @click="setIt">
+							</div>
+							<div>5次以上</div>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
+		<div class="btnSubmit">
+			<button>提交</button>
+		</div>
 	</div>
+
 
 </div>
 <script>
@@ -82,7 +146,7 @@
                 {
                     'navName':'首页',
                     'link':'mt_index.html',
-                    'status':0
+                    'status':1
                 },
                 {
                     'navName':'听众登记',
@@ -112,7 +176,7 @@
                 {
                     'navName':'往届回顾',
                     'link':'mt_past.html',
-                    'status':1
+                    'status':0
                 },
                 {
                     'navName':'关于我们',
@@ -148,7 +212,37 @@
             }
 
 
-        }
+        },
+		mounted:function () {
+            $('.moreCheck>ul>li').click(function () {
+                if($(this).find('.checkbox').hasClass('checkboxSel')){
+                    $(this).find('.checkbox').removeClass('checkboxSel');
+                }else{
+                    $(this).find('.checkbox').addClass('checkboxSel')
+                }
+            });
+            $('.onlyCheck>ul>li').click(function () {
+                $('.onlyCheck>ul>li>div').removeClass('radioboxSel');
+                $(this).find('div').eq(0).addClass('radioboxSel');
+            })
+
+        },
+        methods:{
+            selIt:function (e) {
+                e.stopPropagation();
+                console.log($(e.target).parent('div').hasClass('checkboxSel'))
+                if($(e.target).parent('div').hasClass('checkboxSel')){
+                    $(e.target).parent('div').removeClass('checkboxSel')
+                }else{
+                    $(e.target).parent('div').addClass('checkboxSel')
+                }
+            },
+            setIt:function (e) {
+                e.stopPropagation();
+                $('.onlyCheck>ul>li>div').removeClass('radioboxSel');
+                $(e.target).parent('div').addClass('radioboxSel');
+            }
+        },
     });
 </script>
 <!--删除不良信息-->

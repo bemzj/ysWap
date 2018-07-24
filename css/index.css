@@ -1,6 +1,6 @@
 /*
 Error: Invalid CSS after "...ng-left: 0.3rem": expected "{", was ";"
-        on line 145 of E:\我的代码库\ysWap\css\index.scss
+        on line 145 of C:\Users\Administrator\Desktop\ysWap\css\index.scss
 
 140:       margin-bottom: 0.45rem;
 141:       letter-spacing: 0.03rem;
@@ -15,7 +15,7 @@ Error: Invalid CSS after "...ng-left: 0.3rem": expected "{", was ";"
 150:         .swiper-slide{
 
 Backtrace:
-E:\我的代码库\ysWap\css\index.scss:145
+C:\Users\Administrator\Desktop\ysWap\css\index.scss:145
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
@@ -51,4 +51,4 @@ C:/Program Files (x86)/Koala/bin/sass:18:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...ng-left: 0.3rem\": expected \"{\", was \";\"\A         on line 145 of E:\我的代码库\ysWap\css\index.scss\A \A 140:       margin-bottom: 0.45rem;\A 141:       letter-spacing: 0.03rem;\A 142:     }\A 143:     .swiper01{\A 144: <<<<<<< HEAD\A 145:       padding-left: 0.3rem;\A 146: =======\A 147:       padding:0  0.3rem;\A 148: >>>>>>> af6dca3466635db53e8dbbd7ab30bd316662a042\A 149:       .swiper-wrapper{\A 150:         .swiper-slide{"; }
+  content: "Error: Invalid CSS after \"...ng-left: 0.3rem\": expected \"{\", was \";\"\A         on line 145 of C:\Users\Administrator\Desktop\ysWap\css\index.scss\A \A 140:       margin-bottom: 0.45rem;\A 141:       letter-spacing: 0.03rem;\A 142:     }\A 143:     .swiper01{\A 144: <<<<<<< HEAD\A 145:       padding-left: 0.3rem;\A 146: =======\A 147:       padding:0  0.3rem;\A 148: >>>>>>> af6dca3466635db53e8dbbd7ab30bd316662a042\A 149:       .swiper-wrapper{\A 150:         .swiper-slide{"; }

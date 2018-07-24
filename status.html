@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>往届回顾</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/reset.min.css" />
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/status.css"/>
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if(!clientWidth) return;
+                    if(clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+
+            if(!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
+    <script src="js/public.js"></script>
+</head>
+<body>
+<!--删除不良信息-->
+<div class="delete1" hidden="hidden"></div>
+<div id="main">
+    <!--导航-->
+    <div class="secondNav">
+        <a class="returnNav"><img src="img/navLeft.png" /></a>
+        <p>SbSTC.我的会议</p>
+        <a class="personCenter"><img src="img/person.png"/></a>
+    </div>
+    <div class="main">
+        <!--没有参加会议不能成为-->
+        <div class="status" v-if="status==1">
+            <ul>
+                <li>
+                    <div class="statusImg"></div>
+                </li>
+                <li>
+                    <div class="statusTitle">
+                        <p>您还没有参加过任何会议</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusContent">
+                        <p>参加过会议才能申请听众</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusLink">
+                        <a href="###">报名会议</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--申请听众提交成功-->
+        <div class="status" v-if="status==2">
+            <ul>
+                <li>
+                    <div class="statusImg statusImg1"></div>
+                </li>
+                <li>
+                    <div class="statusTitle">
+                        <p>提交成功</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusContent">
+                        <p>您的申请已成功，请耐心等待</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusLink">
+                        <a href="###">返回</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--申请听众提交成功-->
+        <div class="status" v-if="status==3">
+            <ul>
+                <li>
+                    <div class="statusImg statusImg1"></div>
+                </li>
+                <li>
+                    <div class="statusTitle">
+                        <p>签到成功</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusContent">
+                        <p>您已成功签到，感谢您的支持</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusLink">
+                        <a href="###">返回</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--在线调查提交成功-->
+        <div class="status" v-if="status==4">
+            <ul>
+                <li>
+                    <div class="statusImg statusImg1"></div>
+                </li>
+                <li>
+                    <div class="statusTitle">
+                        <p>提交成功</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusContent">
+                        <p>在线调查已成功提交，感谢您的支持</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusLink">
+                        <a href="###">返回</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script>
+    var  app = new Vue({
+        el:'#main',
+        data: {
+            status:4,
+            navlink:[
+                {
+                    'navName':'首页',
+                    'link':'mt_index.html',
+                    'status':0
+                },
+                {
+                    'navName':'听众登记',
+                    'link':'mt_registration.html',
+                    'status':0
+                },
+                {
+                    'navName':'演讲嘉宾',
+                    'link':'mt_speaker.html',
+                    'status':0
+                },
+                {
+                    'navName':'会议议程',
+                    'link':'mt_agenda.html',
+                    'status':0
+                },
+                {
+                    'navName':'赞助企业',
+                    'link':'mt_enterprise.html',
+                    'status':0
+                },
+                {
+                    'navName':'赞助资讯',
+                    'link':'mt_Consultation.html',
+                    'status':0
+                },
+                {
+                    'navName':'往届回顾',
+                    'link':'mt_past.html',
+                    'status':1
+                },
+                {
+                    'navName':'关于我们',
+                    'link':'mt_about.html',
+                    'status':0
+                }
+            ],
+            bottomNav:{
+                copy:'Copyright© 2018: 《SMT China 表面组装技术》',
+                bNav:[
+                    {
+                        'navName':'首页',
+                        'link':'mt_index.html'
+                    },
+                    {
+                        'navName':'听众登记',
+                        'link':'mt_registration.html',
+                    },
+                    {
+                        'navName':'会议资讯',
+                        'link':'mt_news.html',
+                    },
+                    {
+                        'navName':'关于我们',
+                        'link':'mt_about.html',
+                    },
+                    {
+                        'navName':'关注我们',
+                        'link':'mt_follow.html'
+                    }
+
+                ]
+            }
+        }
+    });
+</script>
+<!--删除不良信息-->
+<div class="delete2" hidden="hidden"></div>
+</body>
+</html>

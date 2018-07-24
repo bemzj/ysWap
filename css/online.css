@@ -1,0 +1,103 @@
+.main {
+  margin-top: 1.0rem;
+  padding-bottom: 0.5rem; }
+
+body {
+  background-color: #F8F8F8; }
+
+.title {
+  color: #333333;
+  font-size: 0.28rem;
+  line-height: 0.44rem;
+  padding: 0.15rem 0.3rem;
+  background-color: #f8f8f8; }
+
+.answerBox {
+  padding: 0.3rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 100%;
+  background-color: white; }
+  .answerBox ul li {
+    display: flex;
+    align-items: center;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    font-size: 0.26rem;
+    color: #666666;
+    margin-bottom: 0.1rem;
+    position: relative; }
+    .answerBox ul li .checkbox {
+      width: 0.3rem;
+      height: 0.3rem;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      border: 1px solid #bfbfbf;
+      -webkit-border-radius: 0.06rem;
+      -moz-border-radius: 0.06rem;
+      border-radius: 0.06rem;
+      margin-right: 0.15rem;
+      margin-top: -0.15rem; }
+      .answerBox ul li .checkbox input {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 1000; }
+    .answerBox ul li > div:nth-child(2) {
+      width: 100%;
+      padding-left: 0.5rem;
+      line-height: 0.5rem;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      text-align: justify; }
+    .answerBox ul li .checkboxSel {
+      border-color: #dea42f; }
+    .answerBox ul li .checkboxSel::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url("../img/checkbox01.png") no-repeat;
+      background-size: 100% 100%; }
+    .answerBox ul li .radioboxSel {
+      border-color: #dea42f; }
+    .answerBox ul li .radioboxSel::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #dea42f;
+      margin-left: -4px;
+      margin-top: -4px; }
+  .answerBox ul li:last-child {
+    margin-bottom: 0; }
+
+.onlyCheck ul li .checkbox {
+  border-radius: 50%;
+  overflow: hidden; }
+
+.btnSubmit {
+  width: 90%;
+  margin: 0.5rem auto 0; }
+  .btnSubmit button {
+    width: 100%;
+    display: block;
+    line-height: 0.84rem;
+    background-color: #dea42f;
+    color: white;
+    font-size: 0.36rem;
+    border-radius: 0.04rem;
+    background-color: #dea42f; }
+
+/*# sourceMappingURL=online.css.map */

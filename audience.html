@@ -42,21 +42,21 @@
 	<!--导航-->
 	<div class="secondNav">
 		<a class="returnNav"><img src="img/navLeft.png" /></a>
-		<p>SbSTC.我的会议</p>
+		<p>SbSTC.申请听众</p>
 		<a class="personCenter"><img src="img/person.png"/></a>
 	</div>
 	<div class="main">
-		<div class="outSelect">
-			<div class="allSelect">
-				<div v-for="(item,index) in navlink">
-					<a :href="item.link" :class="{hasSelect:item.status==1}">{{item.navName}}</a>
-				</div>
-			</div>
-		</div>
+		<!--<div class="outSelect">-->
+			<!--<div class="allSelect">-->
+				<!--<div v-for="(item,index) in navlink">-->
+					<!--<a :href="item.link" :class="{hasSelect:item.status.scss==1}">{{item.navName}}</a>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
 		<div class="list3">
 			<div class="l3-wrap">
 				<ul>
-					<li style="font-weight: bold;">我要报名</li>
+					<li style="font-weight: bold;">申请听众</li>
 					<li>
 						<span class="must">中文名：</span><input type="text" placeholder="请输入中文名"/>
 					</li>
@@ -132,7 +132,7 @@
 						<div class="checkbox">
 							<input type="radio" @click="selIt1">
 						</div>
-						<div>消费类电子产品、设备</div>
+						<div>消费类电子产品、设备消费类电子产品、设备消费类电子产品、设备消费类电子产品、设备消费类电子产品、设备</div>
 					</li>
 					<li>
 						<div class="checkbox">
@@ -240,7 +240,7 @@
 						</div>
 						<div>线路板制造</div>
 					</li>
-					<li class="lastLi ">
+					<li class="lastLi">
 						<div class="checkbox">
 							<input type="checkbox" @click="selIt" class="ot">
 						</div>
@@ -460,7 +460,6 @@
                     $(e.target).parent('div').removeClass('checkboxSel')
                 }else{
                     if($(e.target).hasClass('ot')){
-                        console.log(1);
                         $(e.target).parent('.checkbox').siblings('.other').find('input').removeAttr('disabled');
                         $(e.target).parent('.checkbox').siblings('.other').find('input').focus();
                     }
