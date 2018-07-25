@@ -60,7 +60,7 @@
 					<ul>
 						<li>
 							<div class="checkbox checkboxSel">
-								<input type="checkbox" @click="selIt">
+								<input type="checkbox" @click="selIt" checked>
 							</div>
 							<div>结交更多朋友</div>
 						</li>
@@ -105,25 +105,25 @@
 					<ul>
 						<li>
 							<div class="checkbox radioboxSel">
-								<input type="checkbox" @click="setIt">
+								<input type="radio" @click="setIt" checked>
 							</div>
 							<div>没有参加过</div>
 						</li>
 						<li>
 							<div class="checkbox">
-								<input type="checkbox" @click="setIt">
+								<input type="radio" @click="setIt">
 							</div>
 							<div>一次</div>
 						</li>
 						<li>
 							<div class="checkbox">
-								<input type="checkbox" @click="setIt">
+								<input type="radio" @click="setIt">
 							</div>
 							<div>3次以上</div>
 						</li>
 						<li>
 							<div class="checkbox">
-								<input type="checkbox" @click="setIt">
+								<input type="radio" @click="setIt">
 							</div>
 							<div>5次以上</div>
 						</li>
@@ -217,13 +217,17 @@
             $('.moreCheck>ul>li').click(function () {
                 if($(this).find('.checkbox').hasClass('checkboxSel')){
                     $(this).find('.checkbox').removeClass('checkboxSel');
+                    $(this).find('.checkbox').find('input').removeAttr('checked');
                 }else{
-                    $(this).find('.checkbox').addClass('checkboxSel')
+                    $(this).find('.checkbox').addClass('checkboxSel');
+                    $(this).find('.checkbox').find('input').attr('checked','checked');
                 }
             });
             $('.onlyCheck>ul>li').click(function () {
                 $('.onlyCheck>ul>li>div').removeClass('radioboxSel');
+                $('.onlyCheck>ul>li>div').find('input').removeAttr('checked');
                 $(this).find('div').eq(0).addClass('radioboxSel');
+                $(this).find('div').eq(0).find('input').attr('checked','checked');
             })
 
         },
@@ -232,9 +236,10 @@
                 e.stopPropagation();
                 console.log($(e.target).parent('div').hasClass('checkboxSel'))
                 if($(e.target).parent('div').hasClass('checkboxSel')){
-                    $(e.target).parent('div').removeClass('checkboxSel')
+                    $(e.target).parent('div').removeClass('checkboxSel');
+
                 }else{
-                    $(e.target).parent('div').addClass('checkboxSel')
+                    $(e.target).parent('div').addClass('checkboxSel');
                 }
             },
             setIt:function (e) {

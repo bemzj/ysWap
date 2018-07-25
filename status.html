@@ -90,7 +90,7 @@
                 </li>
             </ul>
         </div>
-        <!--申请听众提交成功-->
+        <!--签到成功-->
         <div class="status" v-if="status==3">
             <ul>
                 <li>
@@ -113,8 +113,31 @@
                 </li>
             </ul>
         </div>
-        <!--在线调查提交成功-->
+        <!--签到成功-->
         <div class="status" v-if="status==4">
+            <ul>
+                <li>
+                    <div class="statusImg"></div>
+                </li>
+                <li>
+                    <div class="statusTitle">
+                        <p>签到失败</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusContent">
+                        <p>很抱歉，请重试</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="statusLink">
+                        <a href="###">返回</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--在线调查提交成功-->
+        <div class="status" v-if="status==5">
             <ul>
                 <li>
                     <div class="statusImg statusImg1"></div>
