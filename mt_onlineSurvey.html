@@ -105,25 +105,58 @@
 					<ul>
 						<li>
 							<div class="checkbox radioboxSel">
-								<input type="radio" @click="setIt" checked>
+								<input type="radio" checked>
 							</div>
 							<div>没有参加过</div>
 						</li>
 						<li>
 							<div class="checkbox">
-								<input type="radio" @click="setIt">
+								<input type="radio">
 							</div>
 							<div>一次</div>
 						</li>
 						<li>
 							<div class="checkbox">
-								<input type="radio" @click="setIt">
+								<input type="radio">
 							</div>
 							<div>3次以上</div>
 						</li>
 						<li>
 							<div class="checkbox">
-								<input type="radio" @click="setIt">
+								<input type="radio">
+							</div>
+							<div>5次以上</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="question">
+				<div class="title">
+					<p>3.您参加的会议的次数是？</p>
+				</div>
+				<div class="answerBox onlyCheck">
+					<ul>
+						<li>
+							<div class="checkbox radioboxSel">
+								<input type="radio" checked>
+							</div>
+							<div>没有参加过</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="radio" >
+							</div>
+							<div>一次</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="radio" >
+							</div>
+							<div>3次以上</div>
+						</li>
+						<li>
+							<div class="checkbox">
+								<input type="radio" >
 							</div>
 							<div>5次以上</div>
 						</li>
@@ -224,8 +257,8 @@
                 }
             });
             $('.onlyCheck>ul>li').click(function () {
-                $('.onlyCheck>ul>li>div').removeClass('radioboxSel');
-                $('.onlyCheck>ul>li>div').find('input').removeAttr('checked');
+                $(this).siblings('li').find('div').removeClass('radioboxSel');
+                $(this).siblings('li').find('input').removeAttr('checked');
                 $(this).find('div').eq(0).addClass('radioboxSel');
                 $(this).find('div').eq(0).find('input').attr('checked','checked');
             })
@@ -241,11 +274,6 @@
                 }else{
                     $(e.target).parent('div').addClass('checkboxSel');
                 }
-            },
-            setIt:function (e) {
-                e.stopPropagation();
-                $('.onlyCheck>ul>li>div').removeClass('radioboxSel');
-                $(e.target).parent('div').addClass('radioboxSel');
             }
         },
     });
